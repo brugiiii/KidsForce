@@ -1,26 +1,26 @@
 import throttle from "lodash.throttle";
 import {WOW} from "wowjs/dist/wow.min";
-// import intlTelInput from 'intl-tel-input';
-// import Cleave from "cleave.js";
-// import "cleave.js";
-// import "cleave.js/dist/addons/cleave-phone.ua";
+import intlTelInput from 'intl-tel-input';
+import Cleave from "cleave.js";
+import "cleave.js";
+import "cleave.js/dist/addons/cleave-phone.ua";
 import refs from "./refs";
 
-// const input = document.getElementById('phone')
-//
-// const iti = intlTelInput(input, {
-//     utilsScript: `${params.template_directory_url}/node_modules/intl-tel-input/build/js/utils.js`,
-//     preferredCountries: ['ua', 'us', 'pl', 'sk', 'gb'],
-//     separateDialCode: true
-// });
-//
-// const cleave = new Cleave(input, {
-//     phone: true,
-//     phoneRegionCode: iti.getSelectedCountryData().iso2,
-//     delimiter: ' ',
-//     blocks: [3, 3, 4],
-//     numericOnly: true
-// });
+const input = document.getElementById('number')
+
+const iti = intlTelInput(input, {
+    utilsScript: `${params.template_directory_url}/node_modules/intl-tel-input/build/js/utils.js`,
+    preferredCountries: ['ua', 'us', 'pl', 'sk', 'gb'],
+    separateDialCode: true
+});
+
+const cleave = new Cleave(input, {
+    phone: true,
+    phoneRegionCode: iti.getSelectedCountryData().iso2,
+    delimiter: ' ',
+    blocks: [3, 3, 4],
+    numericOnly: true
+});
 
 const {bodyEl} = refs;
 
