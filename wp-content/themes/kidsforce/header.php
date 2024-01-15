@@ -19,9 +19,11 @@
     <header class="header">
         <div class="container">
 
-            <a class="logo" href="<?php echo esc_url(pll_home_url()); ?>">
-                <?php echo esc_html(get_bloginfo('name')); ?>
-            </a>
+<!--            <a class="logo" href="--><?php //echo esc_url(pll_home_url()); ?><!--">-->
+<!--                --><?php //echo esc_html(get_bloginfo('name')); ?>
+<!--            </a>-->
+
+            <?php the_custom_logo(); ?>
 
             <nav class="main-nav">
                 <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
@@ -30,3 +32,4 @@
             <?php get_template_part('templates/languageSwitcher'); ?>
         </div>
     </header>
+
