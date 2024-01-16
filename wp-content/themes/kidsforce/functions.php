@@ -12,9 +12,10 @@ function enqueue_scripts_and_styles()
     wp_register_script('jquery', '//code.jquery.com/jquery-1.11.0.min.js');
     wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-1.2.1.min.js');
 
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/dist/css/style.css');
+
     wp_enqueue_script('jquery');
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/main.bundle.js', array('jquery'), null, true);
-    wp_localize_script('main-js', 'params', array('template_directory_url' => get_template_directory_uri()));
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/main.bundle.js', array('jquery'), null, true);
 }
 
 function theme_setup()
@@ -47,6 +48,9 @@ $strings_to_translate = array(
     'copyright' => 'Copyright &#169;2022',
     'made_by' => 'Design by Recipe',
     'signup' => 'Sign up',
+    'name' => 'name',
+    'number' => 'Phone number',
+    'submit' => 'Order feedback'
 );
 
 if (function_exists('pll_register_string')) {

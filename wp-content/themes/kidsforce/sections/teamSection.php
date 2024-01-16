@@ -1,3 +1,11 @@
-<section class="section" id="team">
-    <div class="container"></div>
+<section class="section team">
+    <div class="container">
+        <div class="section-title d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">
+                <?= the_field('team_title'); ?>
+            </h2>
+            <?= get_template_part('templates/ctrlList'); ?>
+        </div>
+        <?= get_template_part('templates/teamList'); ?>
+    </div>
 </section>

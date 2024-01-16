@@ -1,0 +1,37 @@
+.hero {
+  aspect-ratio: 1 / calc(700 / 1440);
+
+  padding-top: 3.5rem;
+
+  color: $primary-bg-color;
+}
+
+.hero-title {
+  margin-bottom: 1.13rem;
+
+  font-size: 3.25rem;
+}
+
+.hero-text {
+  margin-bottom: 3rem;
+
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.hero-button {
+  height: 2.75rem;
+
+  padding: 0 3.25rem;
+
+  border: 0;
+  border-radius: $primary-radius;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  line-height: normal;
+
+  color: $white-color;
+  background-color: $accent-color;
+  box-shadow: $primary-shadow;
+}

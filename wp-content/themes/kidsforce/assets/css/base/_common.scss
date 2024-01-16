@@ -10,3 +10,52 @@
     padding: 0 80px;
   }
 }
+
+.section {
+  padding-top: 11.25rem;
+}
+
+.section--padding-bottom {
+  padding-bottom: 11.25rem;
+}
+
+.section-title {
+  margin-bottom: 4.375rem;
+
+  font-size: 2.375rem;
+}
+
+.bg-accent {
+  background-color: $accent-color;
+}
+
+.text-accent {
+  color: $accent-color;
+}
+
+.form-input {
+  border-radius: $third-radius;
+  border: 0.5px solid $secondary-bg-color;
+  background-color: $white-color;
+
+  padding: 0 0 0 1.62rem;
+}
+
+.ctrl-list {
+  gap: 0.875rem;
+}
+
+.ctrl-list__item {
+  @include transition(fill, border-color);
+
+  width: 3rem;
+  height: 3rem;
+
+  border: 1px solid $active-ctrl-color;
+  fill: $active-ctrl-color;
+
+  &.swiper-button-disabled {
+    border-color: $inactive-ctrl-color;
+    fill: $inactive-ctrl-color;
+  }
+}

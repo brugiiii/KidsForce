@@ -17,19 +17,18 @@
 
 <div class="wrapper">
     <header class="header">
-        <div class="container">
-
-<!--            <a class="logo" href="--><?php //echo esc_url(pll_home_url()); ?><!--">-->
-<!--                --><?php //echo esc_html(get_bloginfo('name')); ?>
-<!--            </a>-->
+        <div class="container d-flex">
 
             <?php the_custom_logo(); ?>
 
-            <nav class="main-nav">
-                <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
-            </nav>
+            <div class="header-wrapper d-flex align-items-center ms-auto">
+                <nav class="main-nav">
+                    <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
+                </nav>
 
-            <?php get_template_part('templates/languageSwitcher'); ?>
+                <?php get_template_part('templates/languageSwitcher'); ?>
+            </div>
+
         </div>
     </header>
 

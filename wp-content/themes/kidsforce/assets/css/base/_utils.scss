@@ -10,7 +10,14 @@ html, body {
 }
 
 body {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.125rem;
+  line-height: calc(1.75 / 1.125);
+
   overflow-x: hidden;
+
+  color: $black-color;
+  background-color: $primary-bg-color;
 }
 
 main {
@@ -29,12 +36,23 @@ main {
   box-sizing: inherit;
 }
 
+section {
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  margin-top: 0;
+
+  font-family: 'Dela Gothic One', sans-serif;
+  font-weight: 400;
+  line-height: normal;
+}
+
 p {
   margin-top: 0;
 }

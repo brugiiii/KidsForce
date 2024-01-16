@@ -12,7 +12,7 @@ Template Name: Home
     <?php get_template_part('sections/ctaSection'); ?>
     <?php get_template_part('sections/teamSection'); ?>
     <?php get_template_part('sections/occupationSection'); ?>
-    <?php get_template_part('sections/foodSection'); ?>
+    <?php get_template_part('sections/feedSection'); ?>
     <?php get_template_part('sections/groupsSection'); ?>
     <?php get_template_part('sections/priceSection'); ?>
     <?php get_template_part('sections/reviewsSection'); ?>

@@ -1,5 +1,26 @@
+
+$primary-bg-color: #F9F0E5;
+$secondary-bg-color: #D4A870;
+$third-bg-color: #EFE5DB;
+
+$accent-color: #F29155;
+$secondary-accent-color: #D4A971;
+$third-accent-color: #EFCA81;
+
+$active-ctrl-color: #EF9156;
+$inactive-ctrl-color: #EFC981;
+
 $white-color: #FFF;
 $black-color: #000;
 
 $duration: 200ms;
 $timing-function: ease-in-out;
+
+$primary-radius: 2rem;
+$secondary-radius: 2.75rem;
+$third-radius: 0.75rem;
+
+$primary-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.18);
+$secondary-shadow: 5px 7px 12px 0px rgba(0, 0, 0, 0.22);
+$third-shadow: 2px -1px 12px 0px rgba(0, 0, 0, 0.22);
+$fourth-shadow: 1px 1px 7.4px 0px rgba(0, 0, 0, 0.18);

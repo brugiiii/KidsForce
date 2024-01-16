@@ -1,0 +1,57 @@
+.cta-wrapper {
+  gap: 1.25rem;
+
+}
+
+.cta-thumb {
+  left: -1px;
+  width: 49.06%;
+  height: calc(100% + 2px);
+}
+
+.cta-wrapper,
+.cta-thumb {
+  border-radius: $secondary-radius;
+  box-shadow: $secondary-shadow;
+}
+
+.cta-text {
+  margin-bottom: 1.875rem;
+
+  text-align: center;
+  font-family: 'Dela Gothic One', sans-serif;
+  line-height: 1.8;
+}
+
+.cta-content {
+  padding: 2.4375rem 2.4375rem 2.625rem 0.625rem;
+}
+
+.cta-form {
+  max-width: 19.0625rem;
+}
+
+.cta-form__input {
+  width: 100%;
+  height: 2.75rem;
+
+  &:first-of-type {
+    margin-bottom: 1.12rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2rem;
+  }
+}
+
+.cta-form__button {
+  height: 3rem;
+  padding: 0 3.25rem;
+
+  font-size: 1rem;
+  line-height: 1.75;
+
+  border-radius: $primary-radius;
+  background-color: $third-accent-color;
+  box-shadow: $primary-shadow;
+}

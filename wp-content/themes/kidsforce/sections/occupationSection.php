@@ -1,3 +1,8 @@
-<section class="section" id="occupation">
-    <div class="container"></div>
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">
+            <?= the_field('occupation_title'); ?>
+        </h2>
+
+    </div>
 </section>
