@@ -1,0 +1,48 @@
+.circles-title {
+  font-size: inherit;
+}
+
+.circles-list__thumb {
+  box-sizing: border-box;
+  aspect-ratio: 1 / calc(351 / 409);
+
+  padding: 2.3125rem 1.6875rem;
+
+  border-radius: $primary-radius;
+  background: $third-bg-color;
+  box-shadow: $fourth-shadow;
+}
+
+.circles-list__tile {
+  max-width: fit-content;
+  margin-bottom: 1.3125rem;
+
+  font-size: 1.25rem;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 0.5rem;
+    left: -0.1875rem;
+    z-index: -1;
+
+    display: inline-block;
+
+    width: 84.11%;
+    height: 82.76%;
+
+    background-color: $fourth-bg-color;
+  }
+}
+
+.circles-list__text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.circles-list__age {
+  font-family: 'Dela Gothic One', sans-serif;
+
+  color: $secondary-text-color;
+}

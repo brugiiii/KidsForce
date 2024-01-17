@@ -1,4 +1,4 @@
-<section class="section section--padding-bottom">
+<section class="section section--padding-bottom" id="cta">
     <div class="container">
         <div class="cta-wrapper d-flex bg-accent border border-black col-lg-10 mx-auto position-relative">
             <div class="cta-thumb overflow-hidden border border-black position-absolute translate-middle-y top-50">

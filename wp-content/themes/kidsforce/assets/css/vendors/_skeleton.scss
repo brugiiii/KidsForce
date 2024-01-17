@@ -2,7 +2,9 @@
   width: 10rem;
   height: 1.75rem;
 
-  background-image: linear-gradient(90deg, $loader-background-color 25%, $loader-highlight-color 50%, $loader-background-color 75%);
+  opacity: 0.8;
+
+  background-image: linear-gradient(90deg, $inactive-ctrl-color 25%, $active-ctrl-color 50%, $inactive-ctrl-color 75%);
   background-size: 200% 100%;
   animation: loading 2s infinite ease-in-out;
   border-radius: $primary-radius;

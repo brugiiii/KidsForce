@@ -1,0 +1,56 @@
+.groups-list {
+  row-gap: 1.25rem;
+}
+
+.groups-list__thumb {
+  padding: 2.5rem 2.5625rem 1.8125rem;
+
+  border-radius: 2.75rem;
+  background-color: $third-bg-color;
+
+  & ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.125rem;
+
+    & li {
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+  }
+}
+
+.groups-list__title {
+  margin-bottom: 0.625rem;
+
+  font-size: 2.125rem;
+}
+
+.groups-list__age {
+  margin-bottom: 1.94rem;
+
+  font-size: 1.25rem;
+  line-height: calc(1.75 / 1.25);
+}
+
+.groups-list__schedule {
+  line-height: 1.75;
+}
+
+.groups-list__age,
+.groups-list__schedule {
+  font-family: 'Dela Gothic One', sans-serif;
+
+  color: $active-ctrl-color;
+}
+
+.groups-list__button {
+  max-width: fit-content;
+
+  margin-top: 1.8125rem;
+  padding: 0.625rem 2.625rem;
+
+  border-radius: $primary-radius;
+  box-shadow: $sixth-shadow;
+  background-color: $active-ctrl-color;
+}

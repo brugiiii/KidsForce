@@ -1,6 +1,36 @@
 /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/js/accordeon.js":
+/*!********************************!*\
+  !*** ./assets/js/accordeon.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+$(document).ready(function () {
+  $('.faq-list__wrapper').on("click", function () {
+    var faqItem = $(this).parent('.faq-list__item');
+    var siblingsItem = faqItem.siblings('.faq-list__item');
+    var siblingsChildren = siblingsItem.children('.faq-list__text');
+    var siblingsChildrenQuestion = siblingsItem.children('.faq-list__wrapper');
+    var siblingsChildrenArrow = siblingsChildrenQuestion.find('.faq-icon__arrow');
+    $(this).next().slideToggle(500);
+    $(this).find('.faq-icon__arrow').toggleClass('rotated');
+    siblingsChildren.slideUp();
+    siblingsChildrenArrow.removeClass('rotated');
+  });
+});
+
+/***/ }),
+
 /***/ "./assets/js/loadOccupation.js":
 /*!*************************************!*\
   !*** ./assets/js/loadOccupation.js ***!
@@ -110,6 +140,25 @@ var teamContentSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"
   allowTouchMove: false
 });
 teamImageSwiper.controller.control = teamContentSwiper;
+var circlesSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.circles-swiper', {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  grabCursor: true,
+  navigation: {
+    prevEl: ".circles .prev",
+    nextEl: ".circles .next"
+  }
+});
+var reviewsSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews-swiper', {
+  spaceBetween: 20,
+  slidesPerView: 2,
+  grabCursor: true,
+  autoHeight: true,
+  navigation: {
+    prevEl: ".reviews .prev",
+    nextEl: ".reviews .next"
+  }
+});
 
 /***/ }),
 
@@ -2823,6 +2872,26 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/object-to-string.js":
+/*!************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-to-string.js ***!
+  \************************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var TO_STRING_TAG_SUPPORT = __webpack_require__(/*! ../internals/to-string-tag-support */ "./node_modules/core-js/internals/to-string-tag-support.js");
+var classof = __webpack_require__(/*! ../internals/classof */ "./node_modules/core-js/internals/classof.js");
+
+// `Object.prototype.toString` method implementation
+// https://tc39.es/ecma262/#sec-object.prototype.tostring
+module.exports = TO_STRING_TAG_SUPPORT ? {}.toString : function toString() {
+  return '[object ' + classof(this) + ']';
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/ordinary-to-primitive.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/core-js/internals/ordinary-to-primitive.js ***!
@@ -3744,6 +3813,39 @@ addToUnscopables('fill');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.find.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.find.js ***!
+  \*******************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $find = (__webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").find);
+var addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ "./node_modules/core-js/internals/add-to-unscopables.js");
+
+var FIND = 'find';
+var SKIPS_HOLES = true;
+
+// Shouldn't skip holes
+// eslint-disable-next-line es/no-array-prototype-find -- testing
+if (FIND in []) Array(1)[FIND](function () { SKIPS_HOLES = false; });
+
+// `Array.prototype.find` method
+// https://tc39.es/ecma262/#sec-array.prototype.find
+$({ target: 'Array', proto: true, forced: SKIPS_HOLES }, {
+  find: function find(callbackfn /* , that = undefined */) {
+    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+// https://tc39.es/ecma262/#sec-array.prototype-@@unscopables
+addToUnscopables(FIND);
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.array.join.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/modules/es.array.join.js ***!
@@ -3796,6 +3898,27 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
     return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.object.to-string.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/modules/es.object.to-string.js ***!
+  \*************************************************************/
+/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var TO_STRING_TAG_SUPPORT = __webpack_require__(/*! ../internals/to-string-tag-support */ "./node_modules/core-js/internals/to-string-tag-support.js");
+var defineBuiltIn = __webpack_require__(/*! ../internals/define-built-in */ "./node_modules/core-js/internals/define-built-in.js");
+var toString = __webpack_require__(/*! ../internals/object-to-string */ "./node_modules/core-js/internals/object-to-string.js");
+
+// `Object.prototype.toString` method
+// https://tc39.es/ecma262/#sec-object.prototype.tostring
+if (!TO_STRING_TAG_SUPPORT) {
+  defineBuiltIn(Object.prototype, 'toString', toString, { unsafe: true });
+}
 
 
 /***/ }),
@@ -14331,7 +14454,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils */ "./assets/js/utils.js");
 /* harmony import */ var _swiper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./swiper */ "./assets/js/swiper.js");
 /* harmony import */ var _loadOccupation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./loadOccupation */ "./assets/js/loadOccupation.js");
-/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../css/main.scss */ "./assets/css/main.scss");
+/* harmony import */ var _accordeon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./accordeon */ "./assets/js/accordeon.js");
+/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/main.scss */ "./assets/css/main.scss");
+
 
 
 

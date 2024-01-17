@@ -5,5 +5,6 @@ import 'intl-tel-input/build/css/intlTelInput.min.css';
 import "./utils";
 import "./swiper";
 import "./loadOccupation";
+import "./accordeon"
 
 import "../css/main.scss";

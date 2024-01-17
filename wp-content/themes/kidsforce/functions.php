@@ -73,7 +73,10 @@ $strings_to_translate = array(
     'tuesday' => 'Tuesday',
     'wednesday' => 'Wednesday',
     'thursday' => 'Thursday',
-    'friday' => 'Friday'
+    'friday' => 'Friday',
+    'schedule' => 'Work schedule:',
+    'price' => 'Price',
+    'send' => 'Send'
 );
 
 if (function_exists('pll_register_string')) {

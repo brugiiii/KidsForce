@@ -23,3 +23,24 @@ const teamContentSwiper = new Swiper(".team-content-swiper", {
 
 teamImageSwiper.controller.control = teamContentSwiper;
 
+const circlesSwiper = new Swiper('.circles-swiper', {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    grabCursor: true,
+    navigation: {
+        prevEl: ".circles .prev",
+        nextEl: ".circles .next"
+    }
+})
+
+const reviewsSwiper = new Swiper('.reviews-swiper', {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    grabCursor: true,
+    autoHeight: true,
+    navigation: {
+        prevEl: ".reviews .prev",
+        nextEl: ".reviews .next"
+    }
+})
+

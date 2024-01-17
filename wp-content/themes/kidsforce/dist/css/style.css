@@ -15393,8 +15393,9 @@ img {
 .occupation-skeleton {
   width: 10rem;
   height: 1.75rem;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(25%, #EEEEEE), color-stop(50%, #DEDEDE), color-stop(75%, #EEEEEE));
-  background-image: linear-gradient(90deg, #EEEEEE 25%, #DEDEDE 50%, #EEEEEE 75%);
+  opacity: 0.8;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(25%, #EFC981), color-stop(50%, #EF9156), color-stop(75%, #EFC981));
+  background-image: linear-gradient(90deg, #EFC981 25%, #EF9156 50%, #EFC981 75%);
   background-size: 200% 100%;
   -webkit-animation: loading 2s infinite ease-in-out;
           animation: loading 2s infinite ease-in-out;
@@ -15578,6 +15579,10 @@ img {
           box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.18);
 }
 
+.team-title {
+  font-size: inherit;
+}
+
 .team-wrapper {
   aspect-ratio: 1/0.4296875;
   border-radius: 2.75rem 2rem 2rem 2.75rem;
@@ -15724,6 +15729,297 @@ img {
   min-width: 8.5625rem;
   font-size: 1.25rem;
   line-height: 1.4;
+}
+
+.groups-list {
+  row-gap: 1.25rem;
+}
+
+.groups-list__thumb {
+  padding: 2.5rem 2.5625rem 1.8125rem;
+  border-radius: 2.75rem;
+  background-color: #EFE5DB;
+}
+.groups-list__thumb ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.125rem;
+}
+.groups-list__thumb ul li {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.groups-list__title {
+  margin-bottom: 0.625rem;
+  font-size: 2.125rem;
+}
+
+.groups-list__age {
+  margin-bottom: 1.94rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.groups-list__schedule {
+  line-height: 1.75;
+}
+
+.groups-list__age,
+.groups-list__schedule {
+  font-family: "Dela Gothic One", sans-serif;
+  color: #EF9156;
+}
+
+.groups-list__button {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-top: 1.8125rem;
+  padding: 0.625rem 2.625rem;
+  border-radius: 2rem;
+  -webkit-box-shadow: 1px -1px 4px 0px rgba(0, 0, 0, 0.12);
+          box-shadow: 1px -1px 4px 0px rgba(0, 0, 0, 0.12);
+  background-color: #EF9156;
+}
+
+.circles-title {
+  font-size: inherit;
+}
+
+.circles-list__thumb {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  aspect-ratio: 1/0.858190709;
+  padding: 2.3125rem 1.6875rem;
+  border-radius: 2rem;
+  background: #EFE5DB;
+  -webkit-box-shadow: 1px 1px 7.4px 0px rgba(0, 0, 0, 0.18);
+          box-shadow: 1px 1px 7.4px 0px rgba(0, 0, 0, 0.18);
+}
+
+.circles-list__tile {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-bottom: 1.3125rem;
+  font-size: 1.25rem;
+}
+.circles-list__tile::before {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  left: -0.1875rem;
+  z-index: -1;
+  display: inline-block;
+  width: 84.11%;
+  height: 82.76%;
+  background-color: #AFCA0B;
+}
+
+.circles-list__text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.circles-list__age {
+  font-family: "Dela Gothic One", sans-serif;
+  color: #393939;
+}
+
+.price-list {
+  --bs-gutter-x: 1.125rem;
+}
+
+.price-list__thumb {
+  aspect-ratio: 1/1.5049180328;
+  padding: 2.5rem 1.5625rem;
+  border-radius: 2rem;
+  background-color: #AFCA0B;
+}
+.price-list__thumb ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+.price-list__thumb ul li {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.price-list__thumb ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.price-list__title {
+  margin-bottom: 1.875rem;
+  font-size: 2.125rem;
+  line-height: 0.9411764706;
+}
+
+.price-list__price {
+  font-family: "Dela Gothic One", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.price-list__button {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  padding: 0.625rem 3.25rem;
+  margin-top: 2.125rem;
+  border-radius: 1.375rem;
+  background-color: #F0E73D;
+  -webkit-box-shadow: 0px 3px 9.9px 0px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 3px 9.9px 0px rgba(0, 0, 0, 0.24);
+}
+
+.food-wrapper {
+  padding: 3.75rem 4.25rem 3.44rem 5.37rem;
+  border-radius: 2.625rem;
+  background-color: #EFE5DB;
+}
+
+.food-list {
+  row-gap: 6.25rem;
+}
+.food-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.food-list ul li strong {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+.food-list ul li:not(:last-child) {
+  position: relative;
+  padding-bottom: 0.69rem;
+  margin-bottom: 0.69rem;
+  overflow: hidden;
+}
+.food-list ul li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #000), color-stop(50%, transparent));
+  background-image: linear-gradient(to right, #000 50%, transparent 50%);
+  background-size: 1.25rem 100%;
+}
+
+.food-list__item {
+  -ms-flex-preferred-size: 28.375rem;
+      flex-basis: 28.375rem;
+}
+
+.food-list__title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 0.875;
+}
+.food-list__title::before {
+  content: "";
+  position: absolute;
+  top: 42.86%;
+  left: 0.13rem;
+  z-index: -1;
+  width: 8.0625rem;
+  height: 1.5rem;
+  background-color: #AFCA0B;
+}
+
+.food-list__text {
+  line-height: 1.2222222222;
+}
+
+.reviews-title {
+  margin-bottom: 1.375rem;
+}
+
+.reviews-wrapper {
+  margin-bottom: 4.375rem;
+}
+
+.reviews-list__thumb {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1.875rem 1.19rem 1.81rem 2.06rem;
+  border-radius: 2.75rem;
+  border: 1px solid #AFCA0B;
+  background-color: #EFE5DB;
+}
+
+.reviews-list__title {
+  margin-bottom: 1.06rem;
+  font-size: 1.125rem;
+  line-height: 1.2222222222;
+}
+
+.reviews-list__text {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.faq-title {
+  margin-bottom: 1.875rem;
+}
+
+.faq-text {
+  margin-bottom: 4.375rem;
+}
+
+.faq-list__wrapper {
+  padding: 0.75rem;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  background-color: #EFE5DB;
+}
+
+.faq-list {
+  max-width: 59.875rem;
+}
+
+.faq-list__item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.faq-list__item:not(:first-child) .faq-list__text {
+  display: none;
+}
+
+.faq-list__title {
+  font-size: 1.25rem;
+}
+
+.faq-list__text {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-top: 0.5rem;
+  margin-left: 5.56rem;
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.faq-icon__arrow {
+  -webkit-transition: -webkit-transform 500ms ease-in-out;
+  transition: -webkit-transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out;
+  transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+  top: 0.5rem;
+  left: 0.75rem;
+  width: 1.125rem;
+  height: 0.625rem;
+}
+.faq-icon__arrow.rotated {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
 }
 
 /*# sourceMappingURL=style.css.map*/

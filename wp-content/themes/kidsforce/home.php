@@ -4,23 +4,26 @@ Template Name: Home
 */
 ?>
 
-<?php get_header(); ?>
+<?= get_header(); ?>
 
 <main>
-    <?php get_template_part('sections/heroSection'); ?>
-    <?php get_template_part('sections/benefitsSection'); ?>
-    <?php get_template_part('sections/ctaSection'); ?>
-    <?php get_template_part('sections/teamSection'); ?>
-    <?php get_template_part('sections/occupationSection'); ?>
-    <?php get_template_part('sections/feedSection'); ?>
-    <?php get_template_part('sections/groupsSection'); ?>
-    <?php get_template_part('sections/priceSection'); ?>
-    <?php get_template_part('sections/reviewsSection'); ?>
-    <?php get_template_part('sections/faqSection'); ?>
-    <?php get_template_part('sections/contactsSection'); ?>
-    <?php get_template_part('sections/gallerySection'); ?>
-    <?php get_template_part('sections/partnersSection'); ?>
+    <?= get_template_part('sections/heroSection'); ?>
+    <?= get_template_part('sections/benefitsSection'); ?>
+    <?= get_template_part('sections/ctaSection'); ?>
+    <?= get_template_part('sections/teamSection'); ?>
+    <?= get_template_part('sections/occupationSection'); ?>
+    <?= get_template_part('sections/groupsSection'); ?>
+    <?= get_template_part('sections/circlesSection'); ?>
+    <?= get_template_part('sections/priceSection'); ?>
+    <?= get_template_part('sections/feedSection'); ?>
+    <?= get_template_part('sections/reviewsSection'); ?>
+    <?= get_template_part('sections/faqSection'); ?>
+    <?= get_template_part('sections/contactsSection'); ?>
+    <?= get_template_part('sections/gallerySection'); ?>
+    <?= get_template_part('sections/partnersSection'); ?>
 </main>
 
-<?php get_footer(); ?>
+<?= get_footer(); ?>
+
+
 
