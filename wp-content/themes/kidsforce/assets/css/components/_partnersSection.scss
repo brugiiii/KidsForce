@@ -1,0 +1,26 @@
+.partners-wrapper {
+  padding: 3.125rem 6.125rem 2.875rem 6.875rem;
+
+  border-radius: $secondary-radius;
+  background-color: $sixth-bg-color;
+  box-shadow: $ninth-shadow;
+}
+
+.partners-text {
+  margin-bottom: 2.5rem;
+
+  font-size: 1.375rem;
+  line-height: calc(2 / 1.375);
+
+  color: $white-color;
+}
+
+.partners-button {
+  font-size: 1.25rem;
+  line-height: calc(1.75 / 1.25);
+
+  padding: 0.625rem 2rem;
+  border-radius: $primary-radius;
+  background: $fifth-bg-color;
+  box-shadow: $tenth-shadow;
+}

@@ -44,3 +44,12 @@ const reviewsSwiper = new Swiper('.reviews-swiper', {
     }
 })
 
+const gallerySwiper = new Swiper('.gallery-swiper', {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    grabCursor: true,
+    navigation: {
+        prevEl: ".gallery .prev",
+        nextEl: ".gallery .next"
+    }
+})

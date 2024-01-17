@@ -15118,7 +15118,8 @@ a {
   text-decoration: none;
 }
 
-img {
+img,
+iframe {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -15221,13 +15222,6 @@ img {
 
 .text-accent {
   color: #F29155;
-}
-
-.form-input {
-  border-radius: 0.75rem;
-  border: 0.5px solid #D4A870;
-  background-color: #FFF;
-  padding: 0 0 0 1.62rem;
 }
 
 .ctrl-list {
@@ -15448,6 +15442,63 @@ img {
   background-color: #F29155;
 }
 
+.footer {
+  padding: 2.3125rem 3.88rem 3.125rem 0;
+  border-radius: 5.5rem 5.5rem 0 0;
+  background: #1D1D1B;
+}
+.footer .custom-logo-link {
+  display: inline-block;
+  width: 12.1875rem;
+  height: 3.8125rem;
+}
+.footer .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2.625rem;
+}
+.footer .nav-list a {
+  display: inline-block;
+  padding: 1.3125rem 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: normal;
+  color: #FFF;
+}
+.footer .socials-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: auto;
+}
+.footer .socials-list__link {
+  fill: #FFF;
+}
+
+.footer-wrapper {
+  width: 79.427%;
+}
+
+.footer-content {
+  margin-bottom: 2.5rem;
+}
+
+.copyright,
+.design {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.625rem;
+  line-height: normal;
+  color: #FFF;
+}
+
 .hero {
   aspect-ratio: 1/0.4861111111;
   background-position: center;
@@ -15560,6 +15611,9 @@ img {
 .cta-form__input {
   width: 100%;
   height: 2.75rem;
+  padding: 0 0 0 1.62rem;
+  border: 0.5px solid #D4A870;
+  border-radius: 0.75rem;
 }
 .cta-form__input:first-of-type {
   margin-bottom: 1.12rem;
@@ -16020,6 +16074,126 @@ img {
 .faq-icon__arrow.rotated {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
+}
+
+.contacts {
+  padding-top: 22.04rem;
+  padding-bottom: 11.44rem;
+}
+
+.contacts-bg {
+  top: 15%;
+  left: calc(50% + 6rem);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  aspect-ratio: 1/0.5554919908;
+  max-width: 109.25rem;
+  width: 120.9722%;
+}
+
+.contacts-title {
+  font-size: 2.625rem;
+}
+
+.contacts-form {
+  max-width: 18.75rem;
+  margin-left: 5.5rem;
+}
+
+.contacts-form__field:first-of-type {
+  margin-bottom: 1.5rem;
+}
+.contacts-form__field:last-of-type {
+  margin-bottom: 2.875rem;
+}
+
+.contacts-form__label {
+  margin-bottom: 0.625rem;
+  font-size: 0.875rem;
+  line-height: normal;
+  color: #030102;
+}
+
+.contacts-form__input {
+  height: 2.5rem;
+  padding: 0 0 0 0.75rem;
+  border: 0.2px solid #000;
+  border-radius: 0.625rem;
+  -webkit-box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+          box-shadow: 0px 4px 18px 0px rgba(158, 168, 189, 0.31);
+}
+
+.contacts-form__button {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  height: 3rem;
+  padding: 0 4.5rem;
+  border-radius: 1.375rem;
+  background: #EF9156;
+  -webkit-box-shadow: 0px 3px 9.9px 0px rgba(0, 0, 0, 0.24);
+          box-shadow: 0px 3px 9.9px 0px rgba(0, 0, 0, 0.24);
+}
+
+.contacts .socials-list {
+  margin-right: 3.125rem;
+}
+
+.contacts .socials-list__item:not(:last-child),
+.contacts-list__item:not(:last-child) {
+  margin-bottom: 2.1875rem;
+}
+
+.contacts-list__icon {
+  margin-right: 1.8125rem;
+}
+
+.contacts-thumb {
+  aspect-ratio: 1/0.7471264368;
+  margin-bottom: 1.875rem;
+  border-radius: 2rem;
+}
+.contacts-thumb p {
+  display: contents;
+}
+
+.contacts-wrapper {
+  margin-left: -4.875rem;
+}
+
+.gallery-title {
+  font-size: inherit;
+}
+
+.gallery-swiper dt {
+  aspect-ratio: 1/0.7790143084;
+  overflow: hidden;
+  border-radius: 1.375rem;
+}
+
+.partners-wrapper {
+  padding: 3.125rem 6.125rem 2.875rem 6.875rem;
+  border-radius: 2.75rem;
+  background-color: #3CB7B2;
+  -webkit-box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 7px 14px 0px rgba(0, 0, 0, 0.23);
+}
+
+.partners-text {
+  margin-bottom: 2.5rem;
+  font-size: 1.375rem;
+  line-height: 1.4545454545;
+  color: #FFF;
+}
+
+.partners-button {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  padding: 0.625rem 2rem;
+  border-radius: 2rem;
+  background: #F0E73D;
+  -webkit-box-shadow: 1px 4px 6.6px 0px rgba(0, 0, 0, 0.19);
+          box-shadow: 1px 4px 6.6px 0px rgba(0, 0, 0, 0.19);
 }
 
 /*# sourceMappingURL=style.css.map*/

@@ -1,0 +1,12 @@
+.gallery-title {
+  font-size: inherit;
+}
+
+.gallery-swiper {
+  & dt {
+    aspect-ratio: 1 / calc(30.625 / 39.3125);
+
+    overflow: hidden;
+    border-radius: $fourth-radius;
+  }
+}

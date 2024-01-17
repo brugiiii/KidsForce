@@ -22,7 +22,7 @@ import refs from "./refs";
 //     numericOnly: true
 // });
 
-const {bodyEl} = refs;
+const {bodyEl, gallerySwiper} = refs;
 
 const throttledHandleResize = throttle(handleResize, 200);
 
@@ -87,23 +87,21 @@ export function disableBodyScroll() {
     bodyEl.css("overflow-y", "hidden");
 }
 
-const replaceInputWithButton = () => {
-    const submitInput = $('.wpcf7-form [type="submit"]');
-    const value = submitInput.val();
-
-    submitInput.prop("outerHTML", function () {
-        return this.outerHTML.replace(/input/gi, "button");
+const replaceWithDiv = (selector, className) => {
+    gallerySwiper.find(selector).replaceWith(function () {
+        return $('<div>', {
+            class: className,
+            html: $(this).html()
+        });
     });
-
-    const newButton = $('.wpcf7-form [type="submit"]');
-    newButton.text(value);
-    newButton.attr("data-text", value);
 };
+
+gallerySwiper.find('div.gallery').addClass('swiper-wrapper');
+replaceWithDiv('dl', 'swiper-slide');
+gallerySwiper.find('style, br').remove();
 
 $("document").ready(function () {
     bodyEl.css("visibility", "visible");
 
     new WOW().init();
-
-    replaceInputWithButton();
 });

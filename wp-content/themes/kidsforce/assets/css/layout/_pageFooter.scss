@@ -1,0 +1,59 @@
+.footer {
+  padding: 2.3125rem 3.88rem 3.125rem 0;
+
+  border-radius: $fifth-radius $fifth-radius 0 0;
+  background: $seventh-bg-color;
+
+  & .custom-logo-link {
+    display: inline-block;
+
+    width: 12.1875rem;
+    height: 3.8125rem;
+  }
+
+  & .nav-list {
+    display: flex;
+    gap: 2.625rem;
+
+    & a {
+      display: inline-block;
+
+      padding: 1.3125rem 0;
+
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: normal;
+
+      color: $white-color;
+    }
+  }
+
+  & .socials-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-left: auto;
+  }
+
+  & .socials-list__link {
+    fill: $white-color;
+  }
+}
+
+.footer-wrapper {
+  width: 79.427%;
+}
+
+.footer-content {
+  margin-bottom: 2.5rem;
+}
+
+.copyright,
+.design {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.625rem;
+  line-height: normal;
+
+  color: $white-color;
+}
