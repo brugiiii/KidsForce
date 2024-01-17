@@ -1,6 +1,10 @@
 .hero {
   aspect-ratio: 1 / calc(700 / 1440);
 
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   padding-top: 3.5rem;
 
   color: $primary-bg-color;

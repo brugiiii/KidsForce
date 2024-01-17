@@ -5,6 +5,8 @@ add_action('after_setup_theme', 'theme_setup');
 add_filter('upload_mimes', 'svg_upload_allow');
 add_action('wpcf7_before_send_mail', 'send_message_to_telegram');
 add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
+add_action('wp_ajax_display_posts', 'display_posts');
+add_action('wp_ajax_nopriv_display_posts', 'display_posts');
 
 function enqueue_scripts_and_styles()
 {
@@ -16,6 +18,17 @@ function enqueue_scripts_and_styles()
 
     wp_enqueue_script('jquery');
     wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/main.bundle.js', array('jquery'), null, true);
+
+    $settings = array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'monday' => translate_and_output('monday'),
+        'tuesday' => translate_and_output('tuesday'),
+        'wednesday' => translate_and_output('wednesday'),
+        'thursday' => translate_and_output('thursday'),
+        'friday' => translate_and_output('friday'),
+    );
+
+    wp_localize_script('main-js', 'settings', $settings);
 }
 
 function theme_setup()
@@ -33,14 +46,19 @@ function get_image($name)
     echo get_template_directory_uri() . "/assets/images/" . $name;
 }
 
+function display_posts()
+{
+    get_template_part('templates/occupationsList');
+}
+
 function translate_and_output($string_key, $group = 'Main Page')
 {
     global $strings_to_translate;
 
     if (function_exists('pll__')) {
-        echo pll__($strings_to_translate[$string_key], $group);
+        return pll__($strings_to_translate[$string_key], $group);
     } else {
-        echo $strings_to_translate[$string_key];
+        return $strings_to_translate[$string_key];
     }
 }
 
@@ -50,7 +68,12 @@ $strings_to_translate = array(
     'signup' => 'Sign up',
     'name' => 'name',
     'number' => 'Phone number',
-    'submit' => 'Order feedback'
+    'submit' => 'Order feedback',
+    'monday' => 'Monday',
+    'tuesday' => 'Tuesday',
+    'wednesday' => 'Wednesday',
+    'thursday' => 'Thursday',
+    'friday' => 'Friday'
 );
 
 if (function_exists('pll_register_string')) {

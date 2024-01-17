@@ -15235,8 +15235,8 @@ img {
 }
 
 .ctrl-list__item {
-  -webkit-transition: fill 200ms ease-in-out, border-color 200ms ease-in-out;
-  transition: fill 200ms ease-in-out, border-color 200ms ease-in-out;
+  -webkit-transition: fill 250ms ease-in-out, border-color 250ms ease-in-out;
+  transition: fill 250ms ease-in-out, border-color 250ms ease-in-out;
   width: 3rem;
   height: 3rem;
   border: 1px solid #EF9156;
@@ -15390,6 +15390,34 @@ img {
   transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+.occupation-skeleton {
+  width: 10rem;
+  height: 1.75rem;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(25%, #EEEEEE), color-stop(50%, #DEDEDE), color-stop(75%, #EEEEEE));
+  background-image: linear-gradient(90deg, #EEEEEE 25%, #DEDEDE 50%, #EEEEEE 75%);
+  background-size: 200% 100%;
+  -webkit-animation: loading 2s infinite ease-in-out;
+          animation: loading 2s infinite ease-in-out;
+  border-radius: 2rem;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
 .header .custom-logo-link {
   display: inline-block;
   -ms-flex-item-align: end;
@@ -15421,6 +15449,9 @@ img {
 
 .hero {
   aspect-ratio: 1/0.4861111111;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 3.5rem;
   color: #F9F0E5;
 }
@@ -15549,7 +15580,7 @@ img {
 
 .team-wrapper {
   aspect-ratio: 1/0.4296875;
-  border-radius: 2rem;
+  border-radius: 2.75rem 2rem 2rem 2.75rem;
   background: #EFE5DB;
   -webkit-box-shadow: 1px 1px 7.4px 0px rgba(0, 0, 0, 0.18);
           box-shadow: 1px 1px 7.4px 0px rgba(0, 0, 0, 0.18);
@@ -15578,8 +15609,8 @@ img {
 }
 
 .team-list__content {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
+  -webkit-transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
   padding: 2rem 1.56rem 3.75rem 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -15597,6 +15628,102 @@ img {
 .team-list__text {
   font-size: 1.0625rem;
   line-height: 1.7;
+}
+
+.occupations-wrapper {
+  gap: 4.75rem;
+}
+
+.occupation-ctrl {
+  width: 18.75%;
+}
+
+.occupation-ctrl__item {
+  -ms-flex-item-align: start;
+      align-self: start;
+}
+.occupation-ctrl__item:nth-child(2) {
+  margin-top: 4.41rem;
+}
+.occupation-ctrl__item:nth-child(3) {
+  margin-top: 0.19rem;
+}
+.occupation-ctrl__item:nth-child(4) {
+  margin-top: 7.31rem;
+}
+.occupation-ctrl__item:nth-child(5) {
+  margin-top: -0.5675rem;
+}
+
+.occupation-ctrl__button {
+  all: unset;
+  fill: #EFC981;
+  -webkit-transition: fill 250ms ease-in-out;
+  transition: fill 250ms ease-in-out;
+}
+.occupation-ctrl__button:hover, .occupation-ctrl__button:focus {
+  fill: #EF9156;
+}
+.occupation-ctrl__button.current {
+  fill: #EF9156;
+}
+
+.occupation-ctrl__title {
+  top: 41.497%;
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.0769230769;
+}
+
+.occupations-list {
+  padding: 1.0625rem 0 2.0625rem;
+}
+.occupations-list:before {
+  content: "";
+  position: absolute;
+  left: -0.56rem;
+  top: 0;
+  z-index: -1;
+  display: inline-block;
+  width: 9.625rem;
+  height: 100%;
+  border-radius: 6.25rem;
+  background-color: #EFC981;
+  -webkit-box-shadow: -3px 2px 12px 0px rgba(0, 0, 0, 0.22);
+          box-shadow: -3px 2px 12px 0px rgba(0, 0, 0, 0.22);
+}
+
+.occupations-list__item {
+  gap: 4.44rem;
+}
+.occupations-list__item:not(:last-child) {
+  position: relative;
+  margin-bottom: 1.12rem;
+  padding-bottom: 1.125rem;
+}
+.occupations-list__item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #000), color-stop(50%, transparent));
+  background-image: linear-gradient(to right, #000 50%, transparent 50%);
+  background-size: 20px 100%;
+}
+.occupations-list__item ul li {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.occupations-list__item ul li:not(:last-child) {
+  margin-bottom: 0.3125rem;
+}
+
+.occupations-list__title {
+  min-width: 8.5625rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
 }
 
 /*# sourceMappingURL=style.css.map*/

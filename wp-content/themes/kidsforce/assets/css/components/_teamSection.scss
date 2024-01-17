@@ -1,7 +1,7 @@
 .team-wrapper {
   aspect-ratio: 1 / calc(550 / 1280);
 
-  border-radius: $primary-radius;
+  border-radius: $secondary-radius $primary-radius $primary-radius $secondary-radius;
   background: $third-bg-color;
   box-shadow: $fourth-shadow;
 
@@ -38,7 +38,7 @@
 }
 
 .team-list__thumb {
-  border-radius: 2.75rem;
+  border-radius: $secondary-radius;
   box-shadow: $third-shadow;
 }
 

@@ -1,4 +1,4 @@
-<section class="section team">
+<section class="team section--padding-bottom">
     <div class="container">
         <div class="section-title d-flex justify-content-between align-items-center">
             <h2 class="mb-0">

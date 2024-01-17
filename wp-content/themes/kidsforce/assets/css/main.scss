@@ -1,21 +1,26 @@
-//@import 'utils/module';
-//@import 'vendors/module';
-//@import 'themes/module';
-//@import 'pages/module';
-
 @import "base/variables";
+
+//Utils
+@import "utils/mixins";
+
+//Base
 @import "base/fonts";
 @import "base/utils";
-@import "utils/mixins";
 @import "base/common";
+
+//Vendors
 @import "vendors/hamburgers";
+@import "vendors/skeleton";
 
+//Layouts
 @import "layout/pageHeader";
+@import "layout/pageFooter";
 
+//Components
 @import 'components/heroSection';
 @import "components/benefitsSection";
 @import "components/ctaSection";
 @import "components/teamSection";
+@import "components/occupationSection";
 
-@import "layout/pageFooter";
 

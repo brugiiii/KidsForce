@@ -5,7 +5,6 @@ const teamImageSwiper = new Swiper(".team-image-swiper", {
     effect: "cards",
     grabCursor: true,
     cardsEffect: {
-        perSlideOffset: 8,
         rotate: false,
         slideShadows: false
     },
