@@ -1,4 +1,4 @@
-<section class="section benefits">
+<section class="section benefits" id="why-us">
     <div class="container">
         <h2 class="benefits-title section-title">
             <?= the_field('benefits_title'); ?>

@@ -1,4 +1,4 @@
-<section class="section reviews">
+<section class="section reviews" id="reviews">
     <div class="container">
         <h2 class="section-title reviews-title">
             <?= the_field('reviews_title'); ?>

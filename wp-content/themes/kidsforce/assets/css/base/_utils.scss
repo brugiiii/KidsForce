@@ -141,3 +141,28 @@ iframe {
     background-image: url("../../assets/images/flags@2x.webp");
   }
 }
+
+.iti--separate-dial-code {
+  & .iti__selected-dial-code {
+    margin-left: 0.625rem;
+
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: normal;
+  }
+
+  & input[type=tel] {
+    padding-left: 5.25rem !important;
+  }
+
+  & .iti__selected-flag {
+    padding-right: 0;
+    padding-left: 0.875rem;
+
+    background-color: transparent;
+  }
+}
+
+.iti__arrow {
+  display: none;
+}

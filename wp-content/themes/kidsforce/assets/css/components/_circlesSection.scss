@@ -2,18 +2,26 @@
   font-size: inherit;
 }
 
-.circles-list__thumb {
+.circles-list__wrapper {
   box-sizing: border-box;
-  aspect-ratio: 1 / calc(351 / 409);
-
-  padding: 2.3125rem 1.6875rem;
 
   border-radius: $primary-radius;
-  background: $third-bg-color;
+  background-color: $third-bg-color;
   box-shadow: $fourth-shadow;
 }
 
-.circles-list__tile {
+.circles-list__thumb {
+  aspect-ratio: 1 / calc(calc(10.625 / 25.8125));
+
+  border-radius: $primary-radius;
+  box-shadow: $fourth-shadow;
+}
+
+.circles-list__content {
+  padding: 0.5rem 1.875rem 1.12rem 1.75rem;
+}
+
+.circles-list__title {
   max-width: fit-content;
   margin-bottom: 1.3125rem;
 
@@ -42,6 +50,8 @@
 }
 
 .circles-list__age {
+  margin-top: 1.875rem;
+
   font-family: 'Dela Gothic One', sans-serif;
 
   color: $secondary-text-color;

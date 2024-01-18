@@ -40,11 +40,12 @@
 }
 
 .price-list__button {
+  @include hover(background-color $fifth-bg-color $active-ctrl-color, border-color transparent $black-color);
+
   max-width: fit-content;
   padding: 0.625rem 3.25rem;
   margin-top: 2.125rem;
 
   border-radius: $fourth-radius;
-  background-color: $fifth-bg-color;
   box-shadow: $seventh-shadow;
 }

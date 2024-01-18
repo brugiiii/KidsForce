@@ -2,9 +2,7 @@
   row-gap: 1.25rem;
 }
 
-.groups-list__thumb {
-  padding: 2.5rem 2.5625rem 1.8125rem;
-
+.groups-list__wrapper {
   border-radius: 2.75rem;
   background-color: $third-bg-color;
 
@@ -18,6 +16,16 @@
       line-height: 1.75;
     }
   }
+}
+
+.groups-list__thumb {
+  aspect-ratio: 1/ calc(219 / 413);
+
+  border-radius: 2.75rem 2.75rem 0 0;
+}
+
+.groups-list__content {
+  padding: 0.625rem 3rem 2.4375rem 3.0625rem;
 }
 
 .groups-list__title {
@@ -45,6 +53,8 @@
 }
 
 .groups-list__button {
+  @include hover(background-color $active-ctrl-color $fifth-bg-color, border-color transparent $black-color);
+
   max-width: fit-content;
 
   margin-top: 1.8125rem;
@@ -52,5 +62,4 @@
 
   border-radius: $primary-radius;
   box-shadow: $sixth-shadow;
-  background-color: $active-ctrl-color;
 }

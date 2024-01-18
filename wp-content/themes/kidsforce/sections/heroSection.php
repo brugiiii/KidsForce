@@ -6,7 +6,7 @@
         <p class="hero-text">
             <?= the_field('hero_undertitle'); ?>
         </p>
-        <button type="button" class="hero-button button-primary">
+        <button type="button" class="hero-button border-style">
             <?= the_field('hero_button'); ?>
         </button>
     </div>

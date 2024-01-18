@@ -27,6 +27,7 @@ const circlesSwiper = new Swiper('.circles-swiper', {
     slidesPerView: 3,
     spaceBetween: 20,
     grabCursor: true,
+    autoHeight: true,
     navigation: {
         prevEl: ".circles .prev",
         nextEl: ".circles .next"

@@ -20,7 +20,7 @@
                     <span class="price-list__price d-block mt-auto">
                         <?= translate_and_output('price') . ' ' . get_field('price') . ' &#8372;'; ?>
                     </span>
-                    <a href="#cta" class="price-list__button d-block mx-auto">
+                    <a href="#cta" class="price-list__button border-style d-block mx-auto">
                         <?= translate_and_output('signup'); ?>
                     </a>
                 </div>

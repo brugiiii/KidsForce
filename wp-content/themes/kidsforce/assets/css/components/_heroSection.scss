@@ -24,18 +24,17 @@
 }
 
 .hero-button {
+  @include hover(background-color $accent-color $fifth-bg-color, color $white-color $black-color, border-color transparent $black-color);
+
   height: 2.75rem;
 
   padding: 0 3.25rem;
 
-  border: 0;
   border-radius: $primary-radius;
 
   font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   line-height: normal;
 
-  color: $white-color;
-  background-color: $accent-color;
   box-shadow: $primary-shadow;
 }

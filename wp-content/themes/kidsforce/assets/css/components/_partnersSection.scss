@@ -16,11 +16,12 @@
 }
 
 .partners-button {
+  @include hover(background-color $fifth-bg-color $active-ctrl-color, border-color transparent $black-color);
+
   font-size: 1.25rem;
   line-height: calc(1.75 / 1.25);
 
   padding: 0.625rem 2rem;
   border-radius: $primary-radius;
-  background: $fifth-bg-color;
   box-shadow: $tenth-shadow;
 }

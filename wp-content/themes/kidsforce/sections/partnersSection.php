@@ -7,7 +7,7 @@
             <p class="partners-text fw-bold">
                 <?= the_field('partners_text'); ?>
             </p>
-            <a href="" class="partners-button">
+            <a href="" class="partners-button border-style">
                 <?= translate_and_output('view_partners'); ?>
             </a>
         </div>

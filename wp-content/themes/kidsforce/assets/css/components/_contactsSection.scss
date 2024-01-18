@@ -31,6 +31,10 @@
 
   &:last-of-type {
     margin-bottom: 2.875rem;
+
+    & > div {
+      width: 100%;
+    }
   }
 }
 
@@ -46,14 +50,27 @@
 .contacts-form__input {
   height: 2.5rem;
 
-  padding: 0 0 0 0.75rem;
+  padding: 0 0 0 0.875rem;
   border: 0.2px solid $black-color;
 
   border-radius: $seventh-radius;
   box-shadow: $eighth-shadow;
+
+  font-size: 1rem;
+  line-height: normal;
+
+  &.invalid {
+    color: $red-color;
+
+    &::placeholder {
+      color: $red-color;
+    }
+  }
 }
 
 .contacts-form__button {
+  @include hover(background-color $active-ctrl-color $fifth-bg-color, border-color transparent $black-color);
+
   max-width: fit-content;
 
   height: 3rem;
@@ -61,13 +78,16 @@
   padding: 0 4.5rem;
 
   border-radius: $fourth-radius;
-  background: $active-ctrl-color;
   box-shadow: $seventh-shadow;
 }
 
 .contacts {
   & .socials-list {
     margin-right: 3.125rem;
+  }
+
+  & .socials-list__link {
+    @include hover(fill inherit $white-color);
   }
 }
 
@@ -80,6 +100,10 @@
 
 .contacts-list__icon {
   margin-right: 1.8125rem;
+}
+
+.contacts-list__link {
+  @include hover(color inherit $white-color, fill inherit $white-color);
 }
 
 .contacts-thumb {

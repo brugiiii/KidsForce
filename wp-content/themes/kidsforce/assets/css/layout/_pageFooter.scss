@@ -16,6 +16,8 @@
     gap: 2.625rem;
 
     & a {
+      @include transition(color);
+
       display: inline-block;
 
       padding: 1.3125rem 0;
@@ -25,6 +27,12 @@
       line-height: normal;
 
       color: $white-color;
+      
+      &:hover,
+      &:focus {
+        color: $active-ctrl-color;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -37,7 +45,7 @@
   }
 
   & .socials-list__link {
-    fill: $white-color;
+    @include hover(fill $white-color $active-ctrl-color);
   }
 }
 
@@ -56,4 +64,8 @@
   line-height: normal;
 
   color: $white-color;
+}
+
+.design a{
+  @include hover(color inherit $active-ctrl-color);
 }

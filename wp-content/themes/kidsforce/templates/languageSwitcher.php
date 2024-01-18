@@ -8,7 +8,7 @@ $current_language = pll_current_language();
         <li class="languages-list__item">
             <a class="<?php if ($lang_code === $current_language) {
                 echo 'current';
-            } ?> languages-list__link text-uppercase"
+            } ?> languages-list__link text-uppercase border-style"
                href="<?php echo esc_url($language['url']); ?>"><?php echo esc_html($lang_code); ?></a>
         </li>
     <?php endforeach; ?>

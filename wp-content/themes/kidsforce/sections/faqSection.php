@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section" id="faq">
     <div class="container">
         <h2 class="section-title faq-title text-lg-center">
             <?= the_field('faq_title'); ?>

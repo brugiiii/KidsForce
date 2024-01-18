@@ -1,4 +1,4 @@
-<section class="contacts position-relative overflow-visible">
+<section class="contacts position-relative overflow-visible" id="contacts">
     <div class="container">
         <div class="row">
             <div class="col-lg-7 d-flex flex-column justify-content-between">
@@ -10,15 +10,16 @@
                         <span class="contacts-form__label d-block">
                             <?= translate_and_output('name'); ?>
                         </span>
-                        <input class="contacts-form__input w-100" type="text">
+                        <input class="contacts-form__input w-100" type="text" name="name" placeholder="<?= translate_and_output('name'); ?>">
                     </label>
                     <label class="contacts-form__field w-100">
                         <span class="contacts-form__label d-block">
                             <?= translate_and_output('number'); ?>
                         </span>
-                        <input class="contacts-form__input w-100" type="tel">
+                        <input class="contacts-form__input w-100" type="tel" name="phone"
+                               placeholder="<?= translate_and_output('number'); ?>">
                     </label>
-                    <button class="contacts-form__button d-block border-0" type="submit">
+                    <button class="contacts-form__button border-style d-block" type="submit">
                         <?= translate_and_output('send'); ?>
                     </button>
                 </form>

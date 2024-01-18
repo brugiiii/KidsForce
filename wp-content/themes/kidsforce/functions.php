@@ -7,6 +7,8 @@ add_action('wpcf7_before_send_mail', 'send_message_to_telegram');
 add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
 add_action('wp_ajax_display_posts', 'display_posts');
 add_action('wp_ajax_nopriv_display_posts', 'display_posts');
+add_action('wp_ajax_send_mail', 'send_mail');
+add_action('wp_ajax_nopriv_send_mail', 'send_mail');
 add_action('customize_register', 'additional_logo_customize_register');
 
 function enqueue_scripts_and_styles()
@@ -15,9 +17,13 @@ function enqueue_scripts_and_styles()
     wp_register_script('jquery', '//code.jquery.com/jquery-1.11.0.min.js');
     wp_register_script('jquery-migrate', '//code.jquery.com/jquery-migrate-1.2.1.min.js');
 
+    wp_enqueue_style('intl-tel-input-style', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.min.css', array(), '17.0.12');
     wp_enqueue_style('main-style', get_template_directory_uri() . '/dist/css/style.css');
 
     wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-mask', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.js', array('jquery'), '1.14.11', true);
+    wp_enqueue_script('intl-tel-input', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput-jquery.min.js', array('jquery'), '17.0.12', true);
+    wp_enqueue_script('intl-tel-input-utils', 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.min.js', array('jquery'), '17.0.12', true);
     wp_enqueue_script('main-js', get_template_directory_uri() . '/dist/js/main.bundle.js', array('jquery'), null, true);
 
     $settings = array(
@@ -27,6 +33,7 @@ function enqueue_scripts_and_styles()
         'wednesday' => translate_and_output('wednesday'),
         'thursday' => translate_and_output('thursday'),
         'friday' => translate_and_output('friday'),
+        'template_directory_url' => get_template_directory_uri()
     );
 
     wp_localize_script('main-js', 'settings', $settings);
@@ -115,6 +122,53 @@ function custom_theme_logo()
     if ($additional_logo_url) {
         echo '<a href="' . esc_url(pll_home_url()) . '" class="custom-logo-link" rel="home" aria-current="page"><img class="custom-logo" alt="' . esc_attr($site_name) . '" src="' . esc_url($additional_logo_url) . '" alt="Additional Logo" decoding="async"></a>';
     }
+}
+
+function send_mail() {
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = sanitize_text_field($_POST['name']);
+        $phone = sanitize_text_field($_POST['phone']);
+
+        $to = get_option('admin_email');
+        $subject = 'Form Submission';
+        $message = "Name: $name\nPhone: $phone";
+
+        $headers = 'From: webmaster@example.com' . "\r\n" .
+            'Reply-To: webmaster@example.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        // Відправлення електронної пошти
+        mail($to, $subject, $message, $headers);
+
+        // Відправлення повідомлення у Телеграм
+        send_telegram_message($name, $phone);
+    }
+
+    wp_die();
+}
+
+function send_telegram_message($name, $phone) {
+    $telegram_bot_token = '6980991397:AAG0bapfE7xNxcxEdIAjVYH0E_ru0X478B8';
+    $chat_id = '-4163052008';
+
+    // Формування повідомлення для відправки
+    $telegram_message = "New Form Submission\nName: $name\nPhone: $phone";
+
+    // Відправлення повідомлення у Телеграм за допомогою cURL
+    $url = "https://api.telegram.org/bot$telegram_bot_token/sendMessage";
+    $data = array('chat_id' => $chat_id, 'text' => $telegram_message);
+
+    $options = array(
+        'http' => array(
+            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data),
+        ),
+    );
+
+    $context  = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
 }
 
 function send_message_to_telegram($contact_form)

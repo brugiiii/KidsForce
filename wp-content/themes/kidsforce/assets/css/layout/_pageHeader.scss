@@ -14,10 +14,18 @@
     gap: 2.62rem;
 
     & a {
+      @include transition(color);
+
       display: inline-block;
       padding: 2rem 0 1.875rem;
 
       text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        color: $active-ctrl-color;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -25,10 +33,26 @@
     margin-left: 8.06rem;
   }
 
+  & .languages-list__item {
+    &:first-child {
+      & .languages-list__link {
+        border-right: transparent;
+      }
+    }
+
+    &:last-child {
+      & .languages-list__link {
+        border-left: transparent;
+      }
+    }
+  }
+
   & .languages-list__link {
+    @include hover(border-color transparent $accent-color);
+
     display: inline-block;
 
-    padding: 0.375rem 0.5rem;
+    padding: 0.3125rem 0.4375rem;
 
     &.current {
       background-color: $accent-color;
