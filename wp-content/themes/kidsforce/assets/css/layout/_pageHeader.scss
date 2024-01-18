@@ -1,12 +1,15 @@
 .header {
+  @media screen and (max-width: 767px){
+    padding-bottom: 0.625rem;
+  }
 
   & .custom-logo-link {
     display: inline-block;
 
     align-self: end;
 
-    width: 14.5rem;
-    height: 3.625rem;
+    width: clamp(11.063rem, 9.852rem + 5.16vw, 14.5rem);
+    flex-shrink: 0;
   }
 
   & .nav-list {

@@ -17,11 +17,11 @@
 
 <div class="wrapper">
     <header class="header">
-        <div class="container d-flex">
+        <div class="container d-flex justify-content-center justify-content-md-start">
 
             <?php the_custom_logo(); ?>
 
-            <div class="header-wrapper d-flex align-items-center ms-auto">
+            <div class="header-wrapper align-items-lg-center ms-lg-auto d-none d-md-flex">
                 <nav class="main-nav">
                     <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
                 </nav>

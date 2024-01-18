@@ -3,9 +3,21 @@
 }
 
 .cta-thumb {
-  left: -1px;
-  width: 49.06%;
-  height: calc(100% + 2px);
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: calc(100% + 2px);
+  height: 17.0625rem;
+
+  @media screen and (min-width: 768px) {
+    top: 50%;
+    left: -1px;
+    transform: translateY(-50%);
+
+    width: 49.06%;
+    height: calc(100% + 2px);
+  }
 }
 
 .cta-wrapper,
@@ -15,15 +27,25 @@
 }
 
 .cta-text {
-  margin-bottom: 1.875rem;
+  margin-bottom: 3.125rem;
 
-  text-align: center;
+  font-size: clamp(1rem, 0.956rem + 0.19vw, 1.125rem);
   font-family: 'Dela Gothic One', sans-serif;
-  line-height: 1.8;
+  line-height: 1.6;
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: 1.875rem;
+  }
 }
 
 .cta-content {
-  padding: 2.4375rem 2.4375rem 2.625rem 0.625rem;
+  padding: 19.5rem 1.0625rem 4.3125rem 1.125rem;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+
+    padding: 2.4375rem 2.4375rem 2.625rem 0.625rem;
+  }
 }
 
 .cta-form {
@@ -68,7 +90,7 @@
 .cta-form__button {
   @include hover(background-color $third-accent-color $fifth-bg-color, border-color transparent $black-color);
   height: 3rem;
-  padding: 0 3.25rem;
+  padding: 0 3.125rem;
 
   font-size: 1rem;
   line-height: 1.75;

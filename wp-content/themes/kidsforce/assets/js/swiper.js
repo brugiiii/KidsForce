@@ -15,10 +15,16 @@ const teamImageSwiper = new Swiper(".team-image-swiper", {
 });
 
 const teamContentSwiper = new Swiper(".team-content-swiper", {
-    direction: "vertical",
     effect: "slide",
     loop: false,
     allowTouchMove: false,
+    slidesPerView: "auto",
+    autoHeight: true,
+    breakpoints: {
+        992: {
+            direction: "vertical",
+        }
+    },
 });
 
 teamImageSwiper.controller.control = teamContentSwiper;

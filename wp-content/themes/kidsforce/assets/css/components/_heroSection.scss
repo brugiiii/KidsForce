@@ -1,34 +1,51 @@
 .hero {
-  aspect-ratio: 1 / calc(700 / 1440);
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  padding-top: 3.5rem;
+  padding-top: clamp(2.875rem, 2.655rem + 0.94vw, 3.5rem);
 
   color: $primary-bg-color;
+
+  @media screen and (max-width: 991px) {
+    height: 43.75rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    aspect-ratio: 1 / calc(700 / 1440);
+  }
 }
 
 .hero-title {
-  margin-bottom: 1.13rem;
+  margin-bottom: 1.375rem;
 
-  font-size: 3.25rem;
+  font-size: clamp(1.75rem, 1.222rem + 2.25vw, 3.25rem);
+
+  @media screen and (min-width: 992px) {
+    margin-bottom: 1.125rem;
+  }
+
+  & br {
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
 }
 
 .hero-text {
-  margin-bottom: 3rem;
+  margin-bottom: clamp(2.375rem, 2.155rem + 0.94vw, 3rem);
 
-  font-size: 1.125rem;
-  font-weight: 700;
+  & br {
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
 }
 
 .hero-button {
   @include hover(background-color $accent-color $fifth-bg-color, color $white-color $black-color, border-color transparent $black-color);
 
-  height: 2.75rem;
-
-  padding: 0 3.25rem;
+  padding: 0.5625rem 3.1875rem;
 
   border-radius: $primary-radius;
 

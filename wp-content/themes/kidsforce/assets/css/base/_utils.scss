@@ -11,13 +11,17 @@ html, body {
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 1.125rem;
-  line-height: calc(1.75 / 1.125);
+  font-size: clamp(0.938rem, 0.871rem + 0.28vw, 1.125rem);
+  line-height: calc(1.375 / 0.9375);
 
   overflow-x: hidden;
 
   color: $black-color;
   background-color: $primary-bg-color;
+
+  @media screen and (min-width: 992px) {
+    line-height: calc(1.75 / 1.125);
+  }
 }
 
 main {

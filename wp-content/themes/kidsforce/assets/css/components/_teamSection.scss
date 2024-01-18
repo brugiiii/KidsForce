@@ -11,17 +11,27 @@
 
   & > div {
     &:first-child {
-      width: 29.688%;
+      width: 18.0625rem;
+
+      @media screen and (max-width: 991px) {
+        margin-left: 1.28rem;
+        margin-bottom: 1.25rem;
+      }
+
+      @media screen and (min-width: 992px) {
+        width: 29.688%;
+      }
     }
 
     &:last-child {
-      width: 66.172%;
+      @media screen and (min-width: 992px) {
+        width: 66.172%;
+      }
     }
   }
 }
 
 .team-content-swiper {
-  height: 100%;
 
   & .swiper-slide,
   & .swiper-slide {
@@ -42,6 +52,14 @@
 }
 
 .team-list__thumb {
+  @media screen and (max-width: 991px) {
+    height: 26.125rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    aspect-ratio: 1 / calc(34.375 / 23.75);
+  }
+
   border-radius: $secondary-radius;
   box-shadow: $third-shadow;
 }
@@ -49,22 +67,32 @@
 .team-list__content {
   @include transition(opacity);
 
-  padding: 2rem 1.56rem 3.75rem 0;
+  padding: 0 0.875rem 2rem;
 
   box-sizing: border-box;
+
+  @media screen and (min-width: 992px) {
+    padding: 2rem 1.56rem 3.75rem 0;
+  }
 }
 
 .team-list__title {
-  font-size: 2rem;
+  font-size: clamp(1.375rem, 1.155rem + 0.94vw, 2rem);
 }
 
 .team-list__position {
+  margin-bottom: 2rem;
+
   font-family: 'Dela Gothic One', sans-serif;
-  font-size: 1.625rem;
+  font-size: clamp(1.125rem, 0.949rem + 0.75vw, 1.625rem);
 }
 
 .team-list__text {
-  font-size: 1.0625rem;
-  line-height: calc(1.80625 / 1.0625);
+  font-size: clamp(0.938rem, 0.893rem + 0.19vw, 1.063rem);
+  line-height: calc(1.5 / 0.9375);
+
+  @media screen and (min-width: 992px) {
+    line-height: calc(1.80625 / 1.0625);
+  }
 }
 

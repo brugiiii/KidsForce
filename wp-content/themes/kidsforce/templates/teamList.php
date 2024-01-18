@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-between team-wrapper">
+<div class="d-lg-flex justify-content-lg-between team-wrapper">
     <div>
         <div class="swiper team-image-swiper">
             <ul class="team-list swiper-wrapper">
@@ -31,7 +31,7 @@
     </div>
 
     <div>
-        <div class="swiper team-content-swiper">
+        <div class="swiper team-content-swiper h-100">
             <ul class="team-list swiper-wrapper">
                 <?php
                 $args = array(
@@ -50,7 +50,7 @@
                                 <h3 class="team-list__title mb-3">
                                     <?= the_field('name'); ?>
                                 </h3>
-                                <p class="team-list__position mb-auto">
+                                <p class="team-list__position mb-lg-auto">
                                     <?= the_field('position'); ?>
                                 </p>
                                 <p class="team-list__text mb-0">

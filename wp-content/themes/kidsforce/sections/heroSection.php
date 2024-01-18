@@ -3,18 +3,24 @@
         <h1 class="hero-title">
             <?= the_field('hero_title'); ?>
         </h1>
-        <p class="hero-text">
+        <p class="hero-text fw-bold">
             <?= the_field('hero_undertitle'); ?>
         </p>
-        <button type="button" class="hero-button border-style">
+        <a href="#cta" class="hero-button d-inline-block border-style">
             <?= the_field('hero_button'); ?>
-        </button>
+        </a>
     </div>
 </section>
 
 <style>
     .hero {
-        background-image: url(<?= the_field('hero_image'); ?>);
+        background-image: url(<?= the_field('hero_image_mob'); ?>);
+    }
+
+    @media screen and (min-width: 768px) {
+        .hero {
+            background-image: url(<?= the_field('hero_image'); ?>);
+        }
     }
 </style>
 

@@ -19,6 +19,9 @@
                         <input class="contacts-form__input w-100" type="tel" name="phone"
                                placeholder="<?= translate_and_output('number'); ?>">
                     </label>
+                    <div hidden>
+                        <input type="text" name="title" value="З форми зворотнього зв'язку">
+                    </div>
                     <button class="contacts-form__button border-style d-block" type="submit">
                         <?= translate_and_output('send'); ?>
                     </button>

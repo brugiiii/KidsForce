@@ -108,6 +108,7 @@ $('button[type="submit"]').on('click', function (e) {
   var form = $(this).closest('form');
   var telInput = form.find('input[type="tel"]');
   var nameInput = form.find('input[name="name"]');
+  var titleInput = form.find('input[name="title"]');
   var telNumber = telInput.intlTelInput('getNumber');
   var telIso = telInput.intlTelInput('getSelectedCountryData').iso2;
   var isValidTelNumber = intlTelInputUtils.isValidNumber(telNumber, telIso);
@@ -119,7 +120,8 @@ $('button[type="submit"]').on('click', function (e) {
     var formData = {
       action: 'send_mail',
       name: nameValue,
-      phone: telNumber
+      phone: telNumber,
+      title: titleInput.val()
     };
     form[0].reset();
     $.ajax({
@@ -143,6 +145,12 @@ $('input').on("input", function () {
   if ($this.hasClass("valid")) {
     $this.removeClass("valid");
   }
+});
+var titleInput = $('#cta-form input[name="title"]');
+$('.feedback-js').on("click", function () {
+  var $this = $(this);
+  var title = $this.data('title');
+  titleInput.val(title);
 });
 
 /***/ }),
@@ -251,10 +259,16 @@ var teamImageSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](
   }
 });
 var teamContentSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".team-content-swiper", {
-  direction: "vertical",
   effect: "slide",
   loop: false,
-  allowTouchMove: false
+  allowTouchMove: false,
+  slidesPerView: "auto",
+  autoHeight: true,
+  breakpoints: {
+    992: {
+      direction: "vertical"
+    }
+  }
 });
 teamImageSwiper.controller.control = teamContentSwiper;
 var circlesSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.circles-swiper', {

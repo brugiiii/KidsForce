@@ -58,6 +58,7 @@ $('button[type="submit"]').on('click', function (e) {
     const form = $(this).closest('form');
     const telInput = form.find('input[type="tel"]');
     const nameInput = form.find('input[name="name"]');
+    const titleInput = form.find('input[name="title"]')
 
     const telNumber = telInput.intlTelInput('getNumber');
     const telIso = telInput.intlTelInput('getSelectedCountryData').iso2;
@@ -75,6 +76,7 @@ $('button[type="submit"]').on('click', function (e) {
             action: 'send_mail',
             name: nameValue,
             phone: telNumber,
+            title: titleInput.val()
         };
 
         form[0].reset();
@@ -103,3 +105,11 @@ $('input').on("input", function () {
         $this.removeClass("valid");
     }
 });
+
+const titleInput = $('#cta-form input[name="title"]');
+$('.feedback-js').on("click", function () {
+    const $this = $(this);
+    const title = $this.data('title')
+
+    titleInput.val(title);
+})

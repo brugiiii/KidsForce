@@ -94,8 +94,7 @@ if (function_exists('pll_register_string')) {
     }
 }
 
-function additional_logo_customize_register($wp_customize)
-{
+function additional_logo_customize_register($wp_customize) {
     $wp_customize->add_setting('additional_logo', array(
         'capability' => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw',
@@ -114,8 +113,7 @@ function additional_logo_customize_register($wp_customize)
     );
 }
 
-function custom_theme_logo()
-{
+function custom_theme_logo() {
     $additional_logo_url = get_theme_mod('additional_logo');
     $site_name = get_bloginfo('name');
 
@@ -124,40 +122,44 @@ function custom_theme_logo()
     }
 }
 
-function send_mail() {
+function send_email_message($name, $phone, $title) {
+    $to = get_option('admin_email');
+    $subject = 'Form Submission';
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = sanitize_text_field($_POST['name']);
-        $phone = sanitize_text_field($_POST['phone']);
+    // Styling for email message
+    $message = '<html><body>';
+    $message .= !empty($title) ? '<h2>' . $title . '</h2>' : '';
+    $message .= '<p>Контактні дані клієнта:</p>';
+    $message .= "<p><strong>Ім'я:</strong> $name</p>";
+    $message .= "<p><strong>Номер телефону:</strong> $phone</p>";
+    $message .= '</body></html>';
 
-        $to = get_option('admin_email');
-        $subject = 'Form Submission';
-        $message = "Name: $name\nPhone: $phone";
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: webmaster@example.com',
+        'Reply-To: webmaster@example.com',
+        'X-Mailer: PHP/' . phpversion()
+    );
 
-        $headers = 'From: webmaster@example.com' . "\r\n" .
-            'Reply-To: webmaster@example.com' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-
-        // Відправлення електронної пошти
-        mail($to, $subject, $message, $headers);
-
-        // Відправлення повідомлення у Телеграм
-        send_telegram_message($name, $phone);
-    }
-
-    wp_die();
+    // Sending HTML email
+    wp_mail($to, $subject, $message, $headers);
 }
 
-function send_telegram_message($name, $phone) {
-    $telegram_bot_token = '6980991397:AAG0bapfE7xNxcxEdIAjVYH0E_ru0X478B8';
-    $chat_id = '-4163052008';
+function send_telegram_message($name, $phone, $title) {
+    $telegram_bot_token = '6795917049:AAFP9yZD1luv8pMjzT_CpHJbbr7ND9ScM2c';
+    $chat_id = '-4107987368';
 
-    // Формування повідомлення для відправки
-    $telegram_message = "New Form Submission\nName: $name\nPhone: $phone";
+    // Додавання заголовка, якщо він є
+    $telegram_message = !empty($title) ? '<b>' . $title . '</b>' . PHP_EOL . PHP_EOL : '';
+
+    // Додавання контактних даних клієнта
+    $telegram_message .= '<b>' . 'Контактні дані клієнта: ' . '</b>' . PHP_EOL . PHP_EOL;
+    $telegram_message .= '<b>' . 'Ім\'я: ' . '</b>' . $name . PHP_EOL;
+    $telegram_message .= '<b>' . 'Номер телефону: ' . '</b>' . $phone . PHP_EOL;
 
     // Відправлення повідомлення у Телеграм за допомогою cURL
     $url = "https://api.telegram.org/bot$telegram_bot_token/sendMessage";
-    $data = array('chat_id' => $chat_id, 'text' => $telegram_message);
+    $data = array('chat_id' => $chat_id, 'text' => $telegram_message, 'parse_mode' => 'HTML');
 
     $options = array(
         'http' => array(
@@ -171,78 +173,31 @@ function send_telegram_message($name, $phone) {
     $result = file_get_contents($url, false, $context);
 }
 
-function send_message_to_telegram($contact_form)
-{
-    $form_id = $contact_form->id();
-    $telegram_token = '';
-    $chat_id = '';
-    $message = '';
+function send_mail() {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = sanitize_text_field($_POST['name']);
+        $phone = sanitize_text_field($_POST['phone']);
+        $title = sanitize_text_field($_POST['title']);
 
-    if ($form_id === 'formId') {
-
-        $submission = WPCF7_Submission::get_instance();
-        if ($submission) {
-            $posted_data = $submission->get_posted_data();
-            $message .= '<b>Контактные данные клиента:</b>' . PHP_EOL;
-            $message .= PHP_EOL;
-            $message .= '<b>Номер телфона:</b> ' . $posted_data['number'] . PHP_EOL;
-            $message .= PHP_EOL;
-        }
-    } elseif ($form_id === 'formId') {
-
-        $submission = WPCF7_Submission::get_instance();
-        if ($submission) {
-            $posted_data = $submission->get_posted_data();
-            $message .= '<b>Контактные данные клиента:</b>' . PHP_EOL;
-            $message .= PHP_EOL;
-            $message .= '<b>Номер телфона:</b> ' . $posted_data['number'] . PHP_EOL;
-            $message .= PHP_EOL;
-        }
+        send_email_message($name, $phone, $title);
+        send_telegram_message($name, $phone, $title);
     }
 
-    if (!empty($telegram_token) && !empty($chat_id) && !empty($message)) {
-        $url = 'https://api.telegram.org/bot' . $telegram_token . '/sendMessage';
-        $params = array(
-            'chat_id' => $chat_id,
-            'text' => $message,
-            'parse_mode' => 'HTML'
-        );
-
-        $query_string = http_build_query($params);
-        $request_url = $url . '?' . $query_string;
-        wp_remote_get($request_url);
-    }
+    wp_die();
 }
 
-function svg_upload_allow($mimes)
-{
+function svg_upload_allow($mimes) {
     $mimes['svg'] = 'image/svg+xml';
-
     return $mimes;
 }
 
-function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '')
-{
-
-    if (version_compare($GLOBALS['wp_version'], '5.1.0', '>=')) {
-        $dosvg = in_array($real_mime, ['image/svg', 'image/svg+xml']);
-    } else {
-        $dosvg = ('.svg' === strtolower(substr($filename, -4)));
-    }
+function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '') {
+    $dosvg = version_compare($GLOBALS['wp_version'], '5.1.0', '>=') ? in_array($real_mime, ['image/svg', 'image/svg+xml']) : ('.svg' === strtolower(substr($filename, -4)));
 
     if ($dosvg) {
-
-        if (current_user_can('manage_options')) {
-
-            $data['ext'] = 'svg';
-            $data['type'] = 'image/svg+xml';
-        } else {
-            $data['ext'] = false;
-            $data['type'] = false;
-        }
+        $data = current_user_can('manage_options') ? ['ext' => 'svg', 'type' => 'image/svg+xml'] : ['ext' => false, 'type' => false];
     }
 
     return $data;
 }
-
 
