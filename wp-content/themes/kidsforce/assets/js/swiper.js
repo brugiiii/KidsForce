@@ -50,23 +50,37 @@ const circlesSwiper = new Swiper('.circles-swiper', {
 })
 
 const reviewsSwiper = new Swiper('.reviews-swiper', {
-    spaceBetween: 20,
-    slidesPerView: 2,
+    slidesPerView: 1,
+    spaceBetween: 16,
     grabCursor: true,
-    autoHeight: true,
     navigation: {
         prevEl: ".reviews .prev",
         nextEl: ".reviews .next"
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        }
     }
 })
 
 const gallerySwiper = new Swiper('.gallery-swiper', {
-    spaceBetween: 20,
-    slidesPerView: 2,
+    slidesPerView: 1,
+    spaceBetween: 16,
     grabCursor: true,
     navigation: {
         prevEl: ".gallery .prev",
         nextEl: ".gallery .next"
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        }
     }
 })
 

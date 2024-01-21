@@ -55,6 +55,8 @@ inputElements.each(function () {
 $('button[type="submit"]').on('click', function (e) {
     e.preventDefault();
 
+    const button = $(e.target);
+
     const form = $(this).closest('form');
     const telInput = form.find('input[type="tel"]');
     const nameInput = form.find('input[name="name"]');
@@ -80,13 +82,17 @@ $('button[type="submit"]').on('click', function (e) {
         };
 
         form[0].reset();
+        button.prop('disabled', true);
+        $('.cta-form__wrapper').addClass('loading')
 
         $.ajax({
             type: 'POST',
             url: settings.ajax_url,
             data: formData,
             success: function(response) {
-                console.log('Form submitted successfully', response);
+                $('.cta-wrapper').addClass('mail-send');
+                $('.cta-form__wrapper').removeClass('loading');
+                button.prop('disabled', false);
             },
             error: function(error) {
                 console.error('Error submitting form', error);

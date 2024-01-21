@@ -1,4 +1,4 @@
-<section>
+<section class="price">
     <div class="container">
         <h2 class="section-title">
             <?= the_field('price_title'); ?>

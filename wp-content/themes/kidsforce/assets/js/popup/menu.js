@@ -5,7 +5,7 @@ const {hamburgerButton, menuBackdrop, menuLinks} = refs;
 
 hamburgerButton.on("click", function (){
     if(menuBackdrop.hasClass('is-hidden')){
-        showBackdrop(menuBackdrop);
+        showBackdrop(menuBackdrop, true);
         window.scrollTo({
             top: 0,
             left: 0,

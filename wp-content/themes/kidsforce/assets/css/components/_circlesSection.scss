@@ -20,10 +20,12 @@
 }
 
 .circles-list__thumb {
-  aspect-ratio: 1 / calc(10.625 / 21.4375);
-
   border-radius: $primary-radius;
   box-shadow: $fourth-shadow;
+
+  @media screen and (max-width: 991px) {
+    height: 10.625rem;
+  }
 
   @media screen and (min-width: 992px) {
     aspect-ratio: 1 / calc(calc(10.625 / 25.8125));

@@ -1,33 +1,75 @@
 .footer {
-  padding: 2.3125rem 3.88rem 3.125rem 0;
+  @media screen and (max-width: 991px) {
+    padding-right: 0.94rem;
+    padding-bottom: 4.25rem;
+    padding-left: 1rem;
+  }
+
+  padding: clamp(2.125rem, 2.059rem + 0.28vw, 2.313rem) 3.88rem 3.125rem 0;
 
   border-radius: $fifth-radius $fifth-radius 0 0;
   background: $seventh-bg-color;
 
-  & .custom-logo-link {
-    display: inline-block;
+  & .container {
+    & > .socials-list {
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
 
-    width: 12.1875rem;
-    height: 3.8125rem;
+  & .custom-logo-link {
+    display: block;
+
+    width: clamp(8.438rem, 7.117rem + 5.63vw, 12.188rem);
+    height: clamp(2.625rem, 2.207rem + 1.78vw, 3.813rem);
+
+    @media screen and (max-width: 991px) {
+      margin: 0 auto 2.5rem;
+    }
+
+    & img {
+      object-fit: contain;
+    }
   }
 
   & .nav-list {
-    display: flex;
-    gap: 2.625rem;
+    @media screen and (min-width: 992px) {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    @media screen and (min-width: 1200px) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 1440px) {
+      gap: 2.625rem;
+    }
+
+    & li {
+      &:not(:last-child) {
+        @media screen and (max-width: 991px) {
+          margin-bottom: 1.375rem;
+        }
+      }
+    }
 
     & a {
       @include transition(color);
 
       display: inline-block;
 
-      padding: 1.3125rem 0;
-
       font-family: 'Inter', sans-serif;
       font-size: 1rem;
       line-height: normal;
 
       color: $white-color;
-      
+
+      @media screen and (min-width: 992px) {
+        padding: 1.3125rem 0;
+      }
+
       &:hover,
       &:focus {
         color: $active-ctrl-color;
@@ -39,22 +81,56 @@
   & .socials-list {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     margin-left: auto;
+
+    @media screen and (max-width: 991px) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      justify-content: space-between;
+    }
   }
 
   & .socials-list__link {
     @include hover(fill $white-color $active-ctrl-color);
   }
+
+  & .socials-list__icon {
+    width: clamp(1.625rem, 1.581rem + 0.19vw, 1.75rem);
+    height: clamp(1.625rem, 1.581rem + 0.19vw, 1.75rem);
+  }
 }
 
 .footer-wrapper {
-  width: 79.427%;
+  @media screen and (min-width: 992px) {
+    width: 79.427%;
+  }
+
+  & > .custom-logo-link {
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
 }
 
 .footer-content {
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(2.5rem, 2.28rem + 0.94vw, 3.125rem);
+
+  & .custom-logo-link {
+    flex-shrink: 0;
+
+    @media screen and (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  & .socials-list {
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+  }
 }
 
 .copyright,
@@ -66,6 +142,6 @@
   color: $white-color;
 }
 
-.design a{
+.design a {
   @include hover(color inherit $active-ctrl-color);
 }

@@ -105,6 +105,7 @@ inputElements.each(function () {
 });
 $('button[type="submit"]').on('click', function (e) {
   e.preventDefault();
+  var button = $(e.target);
   var form = $(this).closest('form');
   var telInput = form.find('input[type="tel"]');
   var nameInput = form.find('input[name="name"]');
@@ -124,12 +125,16 @@ $('button[type="submit"]').on('click', function (e) {
       title: titleInput.val()
     };
     form[0].reset();
+    button.prop('disabled', true);
+    $('.cta-form__wrapper').addClass('loading');
     $.ajax({
       type: 'POST',
       url: settings.ajax_url,
       data: formData,
       success: function success(response) {
-        console.log('Form submitted successfully', response);
+        $('.cta-wrapper').addClass('mail-send');
+        $('.cta-form__wrapper').removeClass('loading');
+        button.prop('disabled', false);
       },
       error: function error(_error) {
         console.error('Error submitting form', _error);
@@ -287,7 +292,7 @@ var hamburgerButton = _refs__WEBPACK_IMPORTED_MODULE_13__["default"].hamburgerBu
   menuLinks = _refs__WEBPACK_IMPORTED_MODULE_13__["default"].menuLinks;
 hamburgerButton.on("click", function () {
   if (menuBackdrop.hasClass('is-hidden')) {
-    (0,_utils__WEBPACK_IMPORTED_MODULE_12__.showBackdrop)(menuBackdrop);
+    (0,_utils__WEBPACK_IMPORTED_MODULE_12__.showBackdrop)(menuBackdrop, true);
     window.scrollTo({
       top: 0,
       left: 0,
@@ -318,6 +323,28 @@ var observer = new MutationObserver(function (mutationsList, observer) {
 });
 observer.observe(menuBackdrop[0], {
   attributes: true
+});
+
+/***/ }),
+
+/***/ "./assets/js/readMore.js":
+/*!*******************************!*\
+  !*** ./assets/js/readMore.js ***!
+  \*******************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.find.js */ "./node_modules/core-js/modules/es.array.find.js");
+/* harmony import */ var core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_array_find_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ "./node_modules/core-js/modules/es.object.to-string.js");
+/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);
+
+
+$('.reviews-list__button').on("click", function () {
+  var $this = $(this);
+  var remainingText = $this.prev('.reviews-list__text').find('.reviews-list__remaining-words');
+  remainingText.toggleClass('is-hidden');
 });
 
 /***/ }),
@@ -398,22 +425,36 @@ var circlesSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.
   }
 });
 var reviewsSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews-swiper', {
-  spaceBetween: 20,
-  slidesPerView: 2,
+  slidesPerView: 1,
+  spaceBetween: 16,
   grabCursor: true,
-  autoHeight: true,
   navigation: {
     prevEl: ".reviews .prev",
     nextEl: ".reviews .next"
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2
+    },
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
   }
 });
 var gallerySwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.gallery-swiper', {
-  spaceBetween: 20,
-  slidesPerView: 2,
+  slidesPerView: 1,
+  spaceBetween: 16,
   grabCursor: true,
   navigation: {
     prevEl: ".gallery .prev",
     nextEl: ".gallery .next"
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    }
   }
 });
 var groupsSwiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.groups-swiper', {
@@ -16634,7 +16675,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _accordeon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./accordeon */ "./assets/js/accordeon.js");
 /* harmony import */ var _intlTelInput__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./intlTelInput */ "./assets/js/intlTelInput.js");
 /* harmony import */ var _popup__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./popup */ "./assets/js/popup/index.js");
-/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/main.scss */ "./assets/css/main.scss");
+/* harmony import */ var _readMore__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./readMore */ "./assets/js/readMore.js");
+/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/main.scss */ "./assets/css/main.scss");
+
 
 
 

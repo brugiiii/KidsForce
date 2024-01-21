@@ -22,7 +22,7 @@
                     <?php
                 } else {
                     ?>
-                    <p class="food-list__text mb-0">
+                    <p class="food-list__text ms-auto ms-lg-0 mb-0">
                         <?= $text; ?>
                     </p>
                 <?php

@@ -13,8 +13,8 @@
             $title = get_field('title');
             $price = get_field('price');
             ?>
-            <li class="price-list__item col-lg-3">
-                <div class="price-list__thumb border border-black d-flex flex-column">
+            <li class="price-list__item col-xl-3 col-md-6">
+                <div class="price-list__thumb border border-black d-flex flex-column h-100">
                     <h3 class="price-list__title text-center">
                         <?= $title; ?>
                     </h3>

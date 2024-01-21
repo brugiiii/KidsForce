@@ -15,7 +15,7 @@ Template Name: Home
     <?= get_template_part('sections/groupsSection'); ?>
     <?= get_template_part('sections/circlesSection'); ?>
     <?= get_template_part('sections/priceSection'); ?>
-    <?= get_template_part('sections/feedSection'); ?>
+    <?= get_template_part('sections/foodSection'); ?>
     <?= get_template_part('sections/reviewsSection'); ?>
     <?= get_template_part('sections/faqSection'); ?>
     <?= get_template_part('sections/contactsSection'); ?>

@@ -1,6 +1,12 @@
 .header {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
     padding: 0.625rem 0;
+  }
+
+  & .container {
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+    }
   }
 
   & .custom-logo-link {
@@ -11,14 +17,29 @@
     width: clamp(11.063rem, 9.852rem + 5.16vw, 14.5rem);
     flex-shrink: 0;
 
-    @media screen and (min-width: 768px) {
-      margin-right: 17.1094%;
+    @media screen and (min-width: 992px) {
+      margin-right: 3.748%;
+    }
+
+    @media screen and (min-width: 1440px) {
+      margin-right: 13.6875rem;
     }
   }
 
   & .nav-list {
     display: flex;
-    gap: 2.62rem;
+
+    @media screen and (min-width: 768px) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      gap: 1.5rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      gap: 2.62rem;
+    }
 
     & a {
       @include transition(color);
@@ -39,6 +60,12 @@
 
   & .languages-list {
     margin-left: auto;
+  }
+}
+
+.header-wrapper {
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    width: 100%;
   }
 }
 

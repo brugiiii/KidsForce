@@ -14,7 +14,7 @@
             $counter++;
             ?>
             <li class="faq-list__item">
-                <div class="faq-list__wrapper d-flex align-items-center justify-content-between">
+                <div class="faq-list__wrapper d-flex align-items-start align-items-lg-center justify-content-between gap-2">
                     <h3 class="faq-list__title">
                         <?= the_field('question'); ?>
                     </h3>

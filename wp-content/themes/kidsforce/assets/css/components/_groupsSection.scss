@@ -36,9 +36,11 @@
 }
 
 .groups-list__thumb {
-  aspect-ratio: 1 / calc(13.75 / 21.4375);
-
   border-radius: 2.75rem 2.75rem 0 0;
+
+  @media screen and (max-width: 991px) {
+    height: clamp(13.75rem, 3.256rem + 44.78vw, 19.375rem);
+  }
 
   @media screen and (min-width: 992px) {
     aspect-ratio: 1/ calc(13.6875 / 25.8125);

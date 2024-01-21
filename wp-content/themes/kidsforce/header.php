@@ -19,10 +19,10 @@
     <header class="header">
         <div class="container">
 
-            <div class="d-flex justify-content-center justify-content-md-start position-relative">
+            <div class="d-flex justify-content-center justify-content-lg-start flex-md-wrap position-relative">
                 <?php the_custom_logo(); ?>
 
-                <div class="header-wrapper align-items-lg-center d-none d-md-flex flex-grow-1">
+                <div class="header-wrapper align-items-md-center d-none d-md-flex flex-grow-1">
                     <nav class="main-nav">
                         <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
                     </nav>

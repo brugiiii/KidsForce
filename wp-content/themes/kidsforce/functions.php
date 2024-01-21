@@ -85,7 +85,7 @@ $strings_to_translate = array(
     'schedule' => 'Work schedule:',
     'price' => 'Price',
     'send' => 'Send',
-    'view_partners' => 'View our partners'
+    'read_more' => 'Read more'
 );
 
 if (function_exists('pll_register_string')) {

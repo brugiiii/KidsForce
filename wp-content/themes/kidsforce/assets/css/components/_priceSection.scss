@@ -1,14 +1,26 @@
 .price-list {
-  --bs-gutter-x: 1.125rem;
+  row-gap: 2rem;
+
+  @media screen and (max-width: 1199px) {
+    padding: 0 1.19rem;
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1439px){
+    --bs-gutter-x: 0.5rem;
+  }
+}
+
+.price-list__item {
+  @media screen and (max-width: 1199px) {
+    min-height: 28.6875rem;
+  }
 }
 
 .price-list__thumb {
-  aspect-ratio: 1 / calc(28.6875 / 19.0625);
-
-  padding: 2.5rem 1.5625rem;
+  padding: 2.4375rem 1.5625rem 3.125rem;
 
   border-radius: $primary-radius;
-  background-color: $fourth-bg-color;
+  background-color: $secondary-accent-color;
 
   & ul {
     list-style-type: disc;
@@ -29,8 +41,16 @@
 .price-list__title {
   margin-bottom: 1.875rem;
 
-  font-size: 2.125rem;
-  line-height: calc(2 / 2.125);
+  font-size: 2rem;
+  line-height: 1;
+
+  @media screen and (min-width: 992px) {
+    line-height: calc(2 / 2.125);
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 2.125rem;
+  }
 }
 
 .price-list__price {
@@ -40,7 +60,7 @@
 }
 
 .price-list__button {
-  @include hover(background-color $fifth-bg-color $active-ctrl-color, border-color transparent $black-color);
+  @include hover(background-color $active-ctrl-color $fifth-bg-color, border-color transparent $black-color);
 
   max-width: fit-content;
   padding: 0.625rem 3.25rem;

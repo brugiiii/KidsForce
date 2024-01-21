@@ -1,18 +1,24 @@
 .partners-wrapper {
-  padding: 3.125rem 6.125rem 2.875rem 6.875rem;
+  padding: 3.125rem clamp(0.5rem, -1.481rem + 8.45vw, 6.125rem) clamp(2.875rem, 2.567rem + 1.31vw, 3.75rem) clamp(0.5rem, -1.745rem + 9.58vw, 6.875rem);
 
   border-radius: $secondary-radius;
   background-color: $sixth-bg-color;
   box-shadow: $ninth-shadow;
-}
 
-.partners-text {
-  margin-bottom: 2.5rem;
+  & p {
+    margin-bottom: 2.5rem;
 
-  font-size: 1.375rem;
-  line-height: calc(2 / 1.375);
+    font-size: clamp(1rem, 0.868rem + 0.56vw, 1.375rem);
+    font-weight: 700;
+    line-height: 1.5;
 
-  color: $white-color;
+    color: $white-color;
+
+    @media screen and (min-width: 992px) {
+      font-size: 1.375rem;
+      line-height: calc(2 / 1.375);
+    }
+  }
 }
 
 .partners-button {
