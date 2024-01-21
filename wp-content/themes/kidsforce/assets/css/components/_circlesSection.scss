@@ -1,3 +1,12 @@
+.circles {
+  & .ctrl-list {
+    @media screen and (max-width: 767px) {
+      margin-top: 1.125rem;
+      margin-left: auto;
+    }
+  }
+}
+
 .circles-title {
   font-size: inherit;
 }
@@ -11,14 +20,22 @@
 }
 
 .circles-list__thumb {
-  aspect-ratio: 1 / calc(calc(10.625 / 25.8125));
+  aspect-ratio: 1 / calc(10.625 / 21.4375);
 
   border-radius: $primary-radius;
   box-shadow: $fourth-shadow;
+
+  @media screen and (min-width: 992px) {
+    aspect-ratio: 1 / calc(calc(10.625 / 25.8125));
+  }
 }
 
 .circles-list__content {
-  padding: 0.5rem 1.875rem 1.12rem 1.75rem;
+  padding: 1.875rem 0.81rem 2.25rem 1.125rem;
+
+  @media screen and (min-width: 992px) {
+    padding: 0.5rem 1.875rem 1.12rem 1.75rem;
+  }
 }
 
 .circles-list__title {
@@ -45,8 +62,12 @@
 }
 
 .circles-list__text {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: clamp(0.938rem, 0.915rem + 0.09vw, 1rem);
+  line-height: calc(1.5 / 0.9375);
+
+  @media screen and (min-width: 992px) {
+    line-height: 1.5;
+  }
 }
 
 .circles-list__age {

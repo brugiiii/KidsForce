@@ -30,13 +30,22 @@ const teamContentSwiper = new Swiper(".team-content-swiper", {
 teamImageSwiper.controller.control = teamContentSwiper;
 
 const circlesSwiper = new Swiper('.circles-swiper', {
-    slidesPerView: 3,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 16,
     grabCursor: true,
     autoHeight: true,
     navigation: {
         prevEl: ".circles .prev",
         nextEl: ".circles .next"
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1200: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        }
     }
 })
 
@@ -58,5 +67,15 @@ const gallerySwiper = new Swiper('.gallery-swiper', {
     navigation: {
         prevEl: ".gallery .prev",
         nextEl: ".gallery .next"
+    }
+})
+
+const groupsSwiper = new Swiper('.groups-swiper', {
+    spaceBetween: 16,
+    slidesPerView: 1,
+    autoHeight: true,
+    navigation: {
+        prevEl: "#groups .prev",
+        nextEl: "#groups .next"
     }
 })

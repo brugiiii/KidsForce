@@ -1,51 +1,103 @@
 .occupations-wrapper {
-  gap: 4.75rem;
+  @media screen and (min-width: 992px) {
+    gap: 5.938%;
+  }
 }
 
 .occupation-ctrl {
-  width: 18.75%;
+  @media screen and (max-width: 991px) {
+    gap: 0.56rem 3.125rem;
+
+    padding: 0 0.975rem;
+    margin-bottom: 2.5rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 15rem;
+  }
 }
 
 .occupation-ctrl__item {
   align-self: start;
 
   &:nth-child(2) {
-    margin-top: 4.41rem;
+    @media screen and (max-width: 991px) {
+      margin-top: 1.25rem;
+      margin-left: -0.125rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      margin-top: 4.41rem;
+    }
   }
 
   &:nth-child(3) {
-    margin-top: 0.19rem;
+    @media screen and (min-width: 992px) {
+      margin-top: 0.19rem;
+    }
   }
 
   &:nth-child(4) {
-    margin-top: 7.31rem;
+    @media screen and (max-width: 991px) {
+      margin-left: 2.5rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      margin-top: 7.31rem;
+    }
   }
 
   &:nth-child(5) {
-    margin-top: -0.5675rem;
+    @media screen and (max-width: 991px) {
+      margin-right: 1.875rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      margin-top: -0.5675rem;
+    }
   }
 }
 
 .occupation-ctrl__button {
   all: unset;
 
-  @include hover(fill $inactive-ctrl-color $active-ctrl-color);
+  @include hover(fill $inactive-ctrl-color $active-ctrl-color, color $black-color $white-color);
 
   &.current {
     fill: $active-ctrl-color;
+
+    & .occupation-ctrl__title {
+      color: $white-color;
+    }
   }
 }
 
-.occupation-ctrl__title {
-  top: 41.497%;
+.occupation-ctrl__icon {
+  aspect-ratio: 1 / calc(108 / 147);
 
-  font-size: 1.625rem;
-  font-weight: 700;
-  line-height: calc(1.75 / 1.625);
+  width: clamp(4.375rem, 2.109rem + 9.67vw, 6.75rem);
+  height: clamp(5.938rem, 2.837rem + 13.23vw, 9.188rem);
+}
+
+.occupation-ctrl__title {
+  top: clamp(2.25rem, 1.3rem + 4.05vw, 3.813rem);
+
+  font-size: clamp(1.25rem, 1.022rem + 0.97vw, 1.625rem);
+  line-height: calc(1.75 / 1.25);
+
+  color: inherit;
+
+  @media screen and (min-width: 992px) {
+    line-height: calc(1.75 / 1.625);
+  }
 }
 
 .occupations-list {
   padding: 1.0625rem 0 2.0625rem;
+
+  @media screen and (max-width: 991px) {
+    padding-left: 0.375rem;
+  }
 
   &:before {
     content: "";
@@ -57,17 +109,21 @@
 
     display: inline-block;
 
-    width: 9.625rem;
+    width: clamp(6.688rem, 4.902rem + 7.62vw, 9.625rem);
     height: 100%;
 
     border-radius: 6.25rem;
     background-color: $inactive-ctrl-color;
     box-shadow: $fifth-shadow;
+
+    @media screen and (max-width: 991px) {
+      left: 0;
+    }
   }
 }
 
 .occupations-list__item {
-  gap: 4.44rem;
+  gap: clamp(1.56rem, -0.19rem + 7.47vw, 4.44rem);
 
   &:not(:last-child) {
     position: relative;
@@ -93,16 +149,20 @@
       line-height: 1.75;
 
       &:not(:last-child) {
-        margin-bottom: 0.3125rem;
+        margin-bottom: clamp(0.25rem, 0.212rem + 0.16vw, 0.313rem);
       }
     }
   }
 }
 
 .occupations-list__title {
-  min-width: 8.5625rem;
+  min-width: clamp(6rem, 4.443rem + 6.65vw, 8.563rem);
 
-  font-size: 1.25rem;
-  line-height: calc(1.75 / 1.25);
+  font-size: clamp(0.875rem, 0.647rem + 0.97vw, 1.25rem);
+  line-height: calc(1.75 / 0.875);
+
+  @media screen and (min-width: 992px) {
+    line-height: calc(1.75 / 1.25);
+  }
 }
 

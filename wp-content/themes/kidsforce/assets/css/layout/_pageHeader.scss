@@ -1,6 +1,6 @@
 .header {
-  @media screen and (max-width: 767px){
-    padding-bottom: 0.625rem;
+  @media screen and (max-width: 767px) {
+    padding: 0.625rem 0;
   }
 
   & .custom-logo-link {
@@ -10,6 +10,10 @@
 
     width: clamp(11.063rem, 9.852rem + 5.16vw, 14.5rem);
     flex-shrink: 0;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 17.1094%;
+    }
   }
 
   & .nav-list {
@@ -22,6 +26,7 @@
       display: inline-block;
       padding: 2rem 0 1.875rem;
 
+      font-size: clamp(0.875rem, 0.831rem + 0.19vw, 1rem);
       text-transform: uppercase;
 
       &:hover,
@@ -33,32 +38,32 @@
   }
 
   & .languages-list {
-    margin-left: 8.06rem;
+    margin-left: auto;
   }
+}
 
-  & .languages-list__item {
-    &:first-child {
-      & .languages-list__link {
-        border-right: transparent;
-      }
-    }
-
-    &:last-child {
-      & .languages-list__link {
-        border-left: transparent;
-      }
+.languages-list__item {
+  &:first-child {
+    & .languages-list__link {
+      border-right: transparent;
     }
   }
 
-  & .languages-list__link {
-    @include hover(border-color transparent $accent-color);
-
-    display: inline-block;
-
-    padding: 0.3125rem 0.4375rem;
-
-    &.current {
-      background-color: $accent-color;
+  &:last-child {
+    & .languages-list__link {
+      border-left: transparent;
     }
+  }
+}
+
+.languages-list__link {
+  @include hover(border-color transparent $accent-color);
+
+  display: inline-block;
+
+  padding: 0.3125rem 0.4375rem;
+
+  &.current {
+    background-color: $accent-color;
   }
 }

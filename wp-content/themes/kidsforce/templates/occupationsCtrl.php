@@ -17,7 +17,7 @@
                     <svg class="occupation-ctrl__icon" width="108" height="147">
                         <use href="<?php get_image('sprite.svg#icon-occupation'); ?>"></use>
                     </svg>
-                    <span class="occupation-ctrl__title position-absolute start-50 translate-middle-x">
+                    <span class="occupation-ctrl__title fw-bold position-absolute start-50 translate-middle-x">
                         <?= the_title(); ?>
                     </span>
                 </button>

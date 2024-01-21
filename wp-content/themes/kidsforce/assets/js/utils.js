@@ -16,11 +16,11 @@ export const showBackdrop = (backdrop, hideOnResize = false) => {
 
     backdrop.removeClass("is-hidden");
     backdrop.on("click", handleBackdropClick);
-    window.on("keydown", handleKeyDown);
+    $(window).on("keydown", handleKeyDown);
     currentBackdrop = backdrop;
 
     if (hideOnResize) {
-        window.on("resize", throttledHandleResize);
+        $(window).on("resize", throttledHandleResize);
     }
 };
 
@@ -33,8 +33,8 @@ export const hideBackdrop = (backdrop) => {
 
     backdrop.addClass("is-hidden");
     backdrop.removeClass("click", handleBackdropClick);
-    window.off("keydown", handleKeyDown);
-    window.off("resize", throttledHandleResize);
+    $(window).off("keydown", handleKeyDown);
+    $(window).off("resize", throttledHandleResize);
 
     currentBackdrop = null;
 };
@@ -46,7 +46,7 @@ function handleBackdropClick(e) {
 }
 
 function handleKeyDown(e) {
-    if (e.code === "Escape") {
+    if (e.key === "Escape") {
         hideBackdrop(currentBackdrop);
     }
 }

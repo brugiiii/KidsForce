@@ -17,16 +17,24 @@
 
 <div class="wrapper">
     <header class="header">
-        <div class="container d-flex justify-content-center justify-content-md-start">
+        <div class="container">
 
-            <?php the_custom_logo(); ?>
+            <div class="d-flex justify-content-center justify-content-md-start position-relative">
+                <?php the_custom_logo(); ?>
 
-            <div class="header-wrapper align-items-lg-center ms-lg-auto d-none d-md-flex">
-                <nav class="main-nav">
-                    <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
-                </nav>
+                <div class="header-wrapper align-items-lg-center d-none d-md-flex flex-grow-1">
+                    <nav class="main-nav">
+                        <?php get_template_part('templates/navigation', null, array('location' => 'menu-header')); ?>
+                    </nav>
 
-                <?php get_template_part('templates/languageSwitcher'); ?>
+                    <?php get_template_part('templates/languageSwitcher'); ?>
+                </div>
+
+                <button class="hamburger hamburger--collapse position-absolute top-50 translate-middle-y end-0 z-2" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
             </div>
 
         </div>

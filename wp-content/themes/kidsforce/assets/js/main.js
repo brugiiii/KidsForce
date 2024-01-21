@@ -6,5 +6,6 @@ import "./swiper";
 import "./loadOccupation";
 import "./accordeon"
 import "./intlTelInput"
+import "./popup"
 
 import "../css/main.scss";

@@ -3,8 +3,6 @@
 }
 
 .team-wrapper {
-  aspect-ratio: 1 / calc(550 / 1280);
-
   border-radius: $secondary-radius $primary-radius $primary-radius $secondary-radius;
   background: $third-bg-color;
   box-shadow: $fourth-shadow;
@@ -67,12 +65,12 @@
 .team-list__content {
   @include transition(opacity);
 
-  padding: 0 0.875rem 2rem;
+  padding: 0 clamp(0.875rem, 0.459rem + 1.78vw, 1.56rem) clamp(2rem, 0.936rem + 4.54vw, 3.75rem);
 
   box-sizing: border-box;
 
   @media screen and (min-width: 992px) {
-    padding: 2rem 1.56rem 3.75rem 0;
+    padding: 2rem 1.56rem 2rem 0;
   }
 }
 
@@ -81,7 +79,7 @@
 }
 
 .team-list__position {
-  margin-bottom: 2rem;
+  margin-bottom: clamp(2rem, 1.296rem + 3vw, 4rem);
 
   font-family: 'Dela Gothic One', sans-serif;
   font-size: clamp(1.125rem, 0.949rem + 0.75vw, 1.625rem);

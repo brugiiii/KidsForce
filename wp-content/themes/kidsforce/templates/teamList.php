@@ -31,7 +31,7 @@
     </div>
 
     <div>
-        <div class="swiper team-content-swiper h-100">
+        <div class="swiper team-content-swiper">
             <ul class="team-list swiper-wrapper">
                 <?php
                 $args = array(
@@ -50,7 +50,7 @@
                                 <h3 class="team-list__title mb-3">
                                     <?= the_field('name'); ?>
                                 </h3>
-                                <p class="team-list__position mb-lg-auto">
+                                <p class="team-list__position">
                                     <?= the_field('position'); ?>
                                 </p>
                                 <p class="team-list__text mb-0">

@@ -10,7 +10,7 @@
                     <?= translate_and_output('copyright'); ?>
                 </span>
                 <span class="design">
-                    Design by <a href="recipe-agency.com.ua" target="_blank" rel="noopener nofollow noreferrer">Recipe</a>
+                    Design by <a href="https://recipe-agency.com.ua/" target="_blank" rel="noopener nofollow noreferrer">Recipe</a>
                 </span>
             </div>
         </div>
@@ -18,6 +18,9 @@
     </div>
 </footer>
 </div>
+
+<?= get_template_part('templates/menu'); ?>
+
 <?php wp_footer(); ?>
 
 </body>
