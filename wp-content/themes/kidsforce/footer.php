@@ -23,6 +23,7 @@
 
 <?= get_template_part('templates/menu'); ?>
 
+
 <?php wp_footer(); ?>
 
 </body>

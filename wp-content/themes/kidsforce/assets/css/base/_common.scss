@@ -78,3 +78,28 @@ button {
 
   opacity: 0;
 }
+
+.top-scroll {
+  @include transition(background-color, fill, border-color, opacity);
+
+  bottom: 1.44rem;
+  margin-bottom: 1.44rem;
+
+  width: 4.625rem;
+  height: 4.625rem;
+
+  border-color: transparent;
+  background-color: $active-ctrl-color;
+  fill: $white-color;
+
+  &.clicked {
+    background-color: $fifth-bg-color;
+    fill: $black-color;
+    border-color: $black-color;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}

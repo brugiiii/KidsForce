@@ -44,6 +44,8 @@
   font-size: 2rem;
   line-height: 1;
 
+  hyphens: auto;
+
   @media screen and (min-width: 992px) {
     line-height: calc(2 / 2.125);
   }

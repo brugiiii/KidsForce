@@ -2,7 +2,7 @@
 $link = get_field('partners_button');
 ?>
 
-<section class="section section--padding-bottom">
+<section class="section partners">
     <div class="container">
         <h2 class="section-title">
             <?= the_field('partners_title'); ?>

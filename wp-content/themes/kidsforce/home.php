@@ -21,6 +21,8 @@ Template Name: Home
     <?= get_template_part('sections/contactsSection'); ?>
     <?= get_template_part('sections/gallerySection'); ?>
     <?= get_template_part('sections/partnersSection'); ?>
+
+    <?= get_template_part('templates/topScroll'); ?>
 </main>
 
 <?= get_footer(); ?>

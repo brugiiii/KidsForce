@@ -1,4 +1,4 @@
-<section class="contacts position-relative overflow-visible" id="contacts">
+<section class="contacts position-relative" id="contacts">
     <div class="container">
         <div class="row">
             <div class="col-lg-7">
@@ -48,7 +48,7 @@
                 <div class="contacts-thumb overflow-hidden">
                     <?= the_field('map'); ?>
                 </div>
-                <div class="contacts-wrapper d-lg-flex">
+                <div class="contacts-wrapper position-relative d-lg-flex">
                     <?= get_template_part('templates/socialsList'); ?>
                     <?= get_template_part('templates/contactsList'); ?>
                 </div>

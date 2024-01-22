@@ -8,5 +8,6 @@ import "./accordeon"
 import "./intlTelInput"
 import "./popup"
 import "./readMore"
+import "./topScroll"
 
 import "../css/main.scss";
