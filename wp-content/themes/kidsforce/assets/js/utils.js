@@ -80,6 +80,7 @@ gallerySwiper.find('div.gallery').addClass('swiper-wrapper');
 replaceWithDiv('dl', 'swiper-slide');
 gallerySwiper.find('style, br').remove();
 
+
 $("document").ready(function () {
     bodyEl.css("visibility", "visible");
 

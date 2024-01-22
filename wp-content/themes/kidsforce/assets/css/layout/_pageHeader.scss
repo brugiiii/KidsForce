@@ -12,8 +12,6 @@
   & .custom-logo-link {
     display: inline-block;
 
-    align-self: end;
-
     width: clamp(11.063rem, 9.852rem + 5.16vw, 14.5rem);
     flex-shrink: 0;
 
@@ -23,6 +21,10 @@
 
     @media screen and (min-width: 1440px) {
       margin-right: 13.6875rem;
+    }
+
+    & img {
+      object-fit: contain;
     }
   }
 

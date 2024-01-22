@@ -5,13 +5,13 @@
                 <?= wp_get_attachment_image(get_field('cta_image'), 'full', false, array('class' => 'cta-thumb__image')); ?>
             </div>
             <div class="cta-ty position-absolute text-center">
-                <h2 class="cta-ty__title">
+                <h2 class="ty-title cta-ty__title">
                     <?= the_field('ty_title'); ?>
                 </h2>
-                <p class="cta-ty__undertitle mx-auto">
+                <p class="ty-undertitle cta-ty__undertitle mx-auto">
                     <?= the_field('ty_undertitle'); ?>
                 </p>
-                <p class="cta-ty__text mb-0 mx-auto">
+                <p class="ty-text cta-ty__text mb-0 mx-auto">
                     <?= the_field('ty_text'); ?>
                 </p>
             </div>

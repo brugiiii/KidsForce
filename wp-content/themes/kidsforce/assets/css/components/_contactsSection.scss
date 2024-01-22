@@ -47,12 +47,52 @@
   }
 }
 
+.contacts-form__wrapper {
+  &.mail-send {
+    & .contacts-form {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    & .contacts-ty {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &.loading {
+    & .contacts-form{
+      opacity: 0.8;
+    }
+
+    & .loader {
+      opacity: 1;
+    }
+  }
+
+  & .loader {
+    top: 30%;
+  }
+}
+
 .contacts-form {
   max-width: 18.75rem;
 
   @media screen and (min-width: 992px) {
     margin-left: min(11.919%, 5.5rem);
   }
+}
+
+.contacts-ty {
+  max-width: 30.125rem;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.contacts-form,
+.contacts-ty {
+  @include transition(opacity);
 }
 
 .contacts-form__field {

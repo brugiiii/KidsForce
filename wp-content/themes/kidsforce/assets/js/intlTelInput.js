@@ -83,7 +83,12 @@ $('button[type="submit"]').on('click', function (e) {
 
         form[0].reset();
         button.prop('disabled', true);
-        $('.cta-form__wrapper').addClass('loading')
+
+        const ctaFormWrapper = $('.cta-form__wrapper');
+        const contactsFormWrapper = $('.contacts-form__wrapper');
+
+        ctaFormWrapper.addClass('loading');
+        contactsFormWrapper.addClass('loading')
 
         $.ajax({
             type: 'POST',
@@ -91,7 +96,11 @@ $('button[type="submit"]').on('click', function (e) {
             data: formData,
             success: function(response) {
                 $('.cta-wrapper').addClass('mail-send');
-                $('.cta-form__wrapper').removeClass('loading');
+                ctaFormWrapper.removeClass('loading');
+
+                contactsFormWrapper.addClass('mail-send');
+                contactsFormWrapper.removeClass('loading');
+
                 button.prop('disabled', false);
             },
             error: function(error) {

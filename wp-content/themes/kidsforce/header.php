@@ -19,7 +19,7 @@
     <header class="header">
         <div class="container">
 
-            <div class="d-flex justify-content-center justify-content-lg-start flex-md-wrap position-relative">
+            <div class="d-flex justify-content-center align-items-center justify-content-lg-start flex-md-wrap position-relative">
                 <?php the_custom_logo(); ?>
 
                 <div class="header-wrapper align-items-md-center d-none d-md-flex flex-grow-1">

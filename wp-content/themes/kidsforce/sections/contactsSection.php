@@ -6,27 +6,42 @@
                     <h2 class="contacts-title mb-lg-0">
                         <?= the_field('contacts_title'); ?>
                     </h2>
-                    <form class="contacts-form">
-                        <label class="contacts-form__field w-100">
+                    <div class="contacts-form__wrapper position-relative">
+                        <form class="contacts-form position-relative">
+                            <label class="contacts-form__field w-100">
                         <span class="contacts-form__label d-block">
                             <?= translate_and_output('name'); ?>
                         </span>
-                            <input class="contacts-form__input w-100" type="text" name="name" placeholder="<?= translate_and_output('name'); ?>">
-                        </label>
-                        <label class="contacts-form__field w-100">
-                        <span class="contacts-form__label d-block">
-                            <?= translate_and_output('number'); ?>
-                        </span>
-                            <input class="contacts-form__input w-100" type="tel" name="phone"
-                                   placeholder="<?= translate_and_output('number'); ?>">
-                        </label>
-                        <div hidden>
-                            <input type="text" name="title" value="З форми зворотнього зв'язку">
+                                <input class="contacts-form__input w-100" type="text" name="name"
+                                       placeholder="<?= translate_and_output('name'); ?>">
+                            </label>
+                            <label class="contacts-form__field w-100">
+                            <span class="contacts-form__label d-block">
+                                <?= translate_and_output('number'); ?>
+                            </span>
+                                <input class="contacts-form__input w-100" type="tel" name="phone"
+                                       placeholder="<?= translate_and_output('number'); ?>">
+                            </label>
+                            <div hidden>
+                                <input type="text" name="title" value="З форми зворотнього зв'язку">
+                            </div>
+                            <button class="contacts-form__button border-style d-block" type="submit">
+                                <?= translate_and_output('send'); ?>
+                            </button>
+                            <?= get_template_part('templates/loader'); ?>
+                        </form>
+                        <div class="contacts-ty is-hidden position-absolute text-center top-0 start-0">
+                            <h3 class="ty-title contacts-ty__title">
+                                <?= the_field('ty_title'); ?>
+                            </h3>
+                            <p class="ty-undertitle contacts-ty__undertitle">
+                                <?= the_field('ty_undertitle'); ?>
+                            </p>
+                            <p class="ty-text contacts-ty__text mx-auto">
+                                <?= the_field('ty_text'); ?>
+                            </p>
                         </div>
-                        <button class="contacts-form__button border-style d-block" type="submit">
-                            <?= translate_and_output('send'); ?>
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5">
@@ -41,7 +56,8 @@
         </div>
     </div>
     <div class="contacts-bg position-absolute z-n1">
-        <img class="object-fit-contain d-none d-lg-block" src="<?= get_image('contacts-bg.svg'); ?>" alt="Background image">
+        <img class="object-fit-contain d-none d-lg-block" src="<?= get_image('contacts-bg.svg'); ?>"
+             alt="Background image">
         <img class="object-fit-contain d-lg-none" src="<?= get_image('contacts-bg-mob.svg'); ?>" alt="Background image">
     </div>
 </section>
