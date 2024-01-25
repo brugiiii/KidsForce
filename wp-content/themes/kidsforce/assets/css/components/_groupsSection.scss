@@ -10,6 +10,49 @@
   row-gap: 1.25rem;
 }
 
+.groups-list__item {
+  &:not(:nth-child(5)) {
+    & .groups-list__thumb {
+      border-radius: 2.75rem 2.75rem 0 0;
+
+      @media screen and (min-width: 992px) {
+        aspect-ratio: 1/ calc(13.6875 / 25.8125);
+      }
+    }
+
+    & .groups-list__content {
+      padding: 0.5625rem clamp(1.438rem, 1.129rem + 1.31vw, 2.313rem) clamp(2rem, 1.978rem + 0.09vw, 2.063rem) clamp(1.5rem, 1.192rem + 1.31vw, 2.375rem);
+    }
+  }
+
+  &:nth-child(5) {
+    & .groups-list__thumb {
+      border-radius: 2.75rem 2.75rem 0 0;
+
+      @media screen and (min-width: 992px) {
+        aspect-ratio: 1/ calc(46.9375 / 25.8125);
+
+        max-width: 48.858%;
+
+        border-radius: 0 2.75rem 2.75rem 0;
+      }
+
+      @media screen and (min-width: 1200px) {
+        height: 100%;
+      }
+    }
+
+    & .groups-list__content {
+      padding: 0 clamp(1.438rem, 0.689rem + 3.19vw, 3.563rem) 0 clamp(1.5rem, 1.192rem + 1.31vw, 2.375rem);
+
+      @media screen and (max-width: 991px) {
+        padding-top: 1.0625rem;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
 .groups-list__wrapper {
   border-radius: 2.75rem;
   background-color: $third-bg-color;
@@ -36,19 +79,9 @@
 }
 
 .groups-list__thumb {
-  border-radius: 2.75rem 2.75rem 0 0;
-
   @media screen and (max-width: 991px) {
     height: clamp(13.75rem, 3.256rem + 44.78vw, 19.375rem);
   }
-
-  @media screen and (min-width: 992px) {
-    aspect-ratio: 1/ calc(13.6875 / 25.8125);
-  }
-}
-
-.groups-list__content {
-  padding: 0.5625rem clamp(1.438rem, 1.129rem + 1.31vw, 2.313rem) clamp(2rem, 1.978rem + 0.09vw, 2.063rem) clamp(1.5rem, 1.192rem + 1.31vw, 2.375rem);
 }
 
 .groups-list__title {
@@ -59,6 +92,14 @@
   @media screen and (min-width: 992px) {
     font-size: 1.75rem;
   }
+}
+
+.groups-list__subtitle {
+  margin-bottom: 0.5rem;
+
+  font-family: 'Dela Gothic One', sans-serif;
+  font-size: 0.9375rem;
+  line-height: normal;
 }
 
 .groups-list__age {

@@ -91,5 +91,5 @@ const groupsSwiper = new Swiper('.groups-swiper', {
     navigation: {
         prevEl: "#groups .prev",
         nextEl: "#groups .next"
-    }
+    },
 })

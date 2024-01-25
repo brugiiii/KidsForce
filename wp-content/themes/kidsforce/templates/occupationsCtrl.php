@@ -1,4 +1,4 @@
-<ul class="occupation-ctrl d-flex flex-wrap justify-content-between flex-shrink-0">
+<ul class="occupation-ctrl d-flex flex-wrap justify-content-between flex-shrink-0 align-self-start">
     <?php
     $args = array(
         'post_type' => 'occupation',
