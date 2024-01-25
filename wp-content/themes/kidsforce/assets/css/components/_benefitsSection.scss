@@ -1,4 +1,24 @@
 .benefits {
+  & .container {
+    & > p {
+      margin-bottom: 2.5rem;
+
+      @media screen and (min-width: 992px) {
+        margin-bottom: 1.75rem;
+      }
+
+      & br {
+        @media screen and (max-width: 991px) {
+          display: none;
+        }
+      }
+
+      & strong {
+        color: $secondary-accent-color;
+      }
+    }
+  }
+
   & ul {
     @media screen and (min-width: 768px) and (max-width: 991px){
       max-width: fit-content;
@@ -66,18 +86,4 @@
 
 .benefits-title {
   margin-bottom: 1.875rem;
-}
-
-.benefits-text {
-  margin-bottom: 2.5rem;
-
-  @media screen and (min-width: 992px) {
-    margin-bottom: 1.75rem;
-  }
-
-  & br {
-    @media screen and (max-width: 991px) {
-      display: none;
-    }
-  }
 }
