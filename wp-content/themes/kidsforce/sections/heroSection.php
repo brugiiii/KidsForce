@@ -7,7 +7,7 @@
         <p class="hero-text fw-bold">
             <?= the_field('hero_undertitle'); ?>
         </p>
-        <a href="#cta" class="hero-button d-inline-block border-style">
+        <a href="#cta" class="hero-button text-center d-inline-block border-style">
             <?= the_field('hero_button'); ?>
         </a>
     </div>

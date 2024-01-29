@@ -6,6 +6,9 @@
             </h2>
             <?= get_template_part('templates/ctrlList'); ?>
         </div>
+        <p class="team-undertitle">
+            <?= the_field('team_undertitle'); ?>
+        </p>
         <?= get_template_part('templates/teamList'); ?>
     </div>
 </section>

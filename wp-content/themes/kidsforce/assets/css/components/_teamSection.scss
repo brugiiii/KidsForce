@@ -1,5 +1,13 @@
+.team .section-title{
+  margin-bottom: 1.875rem;
+}
+
 .team-title {
   font-size: inherit;
+}
+
+.team-undertitle {
+  margin-bottom: clamp(2.5rem, 1.84rem + 2.82vw, 4.375rem)
 }
 
 .team-wrapper {
